@@ -1,0 +1,237 @@
+$primary-color: #cea660; // Gold color for accents
+
+.main-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-section {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  justify-content: center; // Center the card horizontally
+}
+
+.welcome-card {
+  background: linear-gradient(to right, black, black, #cea660);
+  color: $primary-color;
+  width: 100%; // Adjust as needed
+  border-radius: 8px;
+  padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    background: linear-gradient(to bottom, black, black,#cea660);
+  }
+
+}
+
+.top-content {
+  display: flex;
+  align-items: center; // Vertically center the logo and text
+  gap: 1rem; // Space between logo and text
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; // Align logo to the left
+  width: auto; // Adjust to fit the logo
+}
+
+.logo {
+  max-width: 150px; // Adjust as needed
+  height: auto;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.welcome-text {
+  flex: 1; // Allows text to take the remaining space
+  text-align: left;
+  font-size: 30px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 16px;
+
+    & h1 {
+      font-size: 20px;
+    }
+  }
+
+  & h1 {
+    font-size: 35px;
+  }
+}
+
+.features-section {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  .feature-card {
+    background-color: #ffffff;
+    color: #313131;
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    // &:hover {
+    //   background: radial-gradient(circle, white, white, white, #cea660);
+    //   transition: 0.3s;
+
+    //   mat-card-content {
+    //     color: #313131;
+    //   }
+
+    // }
+
+    mat-card {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: $primary-color;
+    }
+
+    mat-card-content {
+      font-size: 1rem;
+      color: #313131;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.features-section-responsive {
+  width: 100%;
+  margin-bottom: 2rem;
+  .feature-card {
+    background-color: #ffffff;
+    color: #313131;
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    // &:hover {
+    //   background: radial-gradient(circle, white, white, white, #cea660);
+    //   transition: 0.3s;
+
+    //   mat-card-content {
+    //     color: #313131;
+    //   }
+
+    // }
+
+    mat-card {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: $primary-color;
+    }
+
+    mat-card-content {
+      font-size: 1rem;
+      color: #313131;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+
+
+/*.login-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  .login-card {
+    background-color: #313131;
+    color: #ffffff;
+    width: 30%;
+    height: auto;
+    padding: auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}*/
+
+.login-btn {
+  background-color: black;
+  color: $primary-color;
+  border: 0px;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  margin-right: 20px;
+
+  &:hover {
+    background-color: #313131;
+    color: #ffffff;
+    transition: 0.3s;
+  }
+
+  &:active {
+    background-color: black;
+    color: #ffffff;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+}
+
+.login-icon {
+  transform: scale(1.75);
+ 
+}
+
+.custom-dialog-container {
+  border-radius: 15px; /* Adjust the radius as needed */
+  overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+}
+
+.footer{
+  width: 100%;
+  height: 50px;
+  margin-bottom: -60px;
+  border-radius: 8px;
+  background: linear-gradient(to top, #cea660, white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  color: #313131;
+}

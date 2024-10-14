@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-dialog-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: 500px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      height: auto;
+    }
+  }
+  
+  .mat-badge-content {
+    background: white;
+    color: black;
+}
+
+.my-custom-badge-accent.mat-badge-accent .mat-badge-content {
+  background-color: white;
+  color: black;
+}

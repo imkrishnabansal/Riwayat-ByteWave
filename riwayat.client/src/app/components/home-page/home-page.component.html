@@ -1,0 +1,43 @@
+<div class="main-container">
+  <div class="top-section">
+    <mat-card class="welcome-card">
+      <mat-card-content>
+        <div class="top-content">
+          <div class="logo-container">
+            <img src="../../../assets/Riwayat.png" alt="Riwayat Logo" class="logo" />
+          </div>
+          <div class="welcome-text">
+            <h1>Welcome to Riwayat!</h1>
+            <p>Celebrating Moments, Honoring Traditions</p>
+          </div>
+          <div class="button-containner">
+            <button class="login-btn" title="Login or Sign Up" (click)="openLoginDialog()"><mat-icon class="login-icon">perm_identity</mat-icon></button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="features-section">
+    <mat-grid-list cols="3" rowHeight="150px" gutterSize="16px">
+      <mat-grid-tile *ngFor="let feature of features" class="feature-card">
+        <mat-card>
+          <mat-card-title>{{ feature.title }}</mat-card-title>
+          <mat-card-content>{{ feature.description }}</mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="features-section-responsive">
+    <mat-grid-list cols="1" rowHeight="150px" gutterSize="16px">
+      <mat-grid-tile *ngFor="let feature of features" class="feature-card">
+        <mat-card>
+          <mat-card-title>{{ feature.title }}</mat-card-title>
+          <mat-card-content>{{ feature.description }}</mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="footer">
+    <p>Riwayat by ByteWave - Copyright &copy; 2024, All Rights Reserved.</p>
+  </div>
+</div>

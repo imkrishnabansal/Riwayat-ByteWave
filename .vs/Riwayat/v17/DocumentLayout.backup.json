@@ -1,0 +1,114 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\services\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\services\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\mongodb\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\mongodb\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\models\\dbentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\models\\dbentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Riwayat.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\appsettings.json",
+              "RelativeToolTip": "Riwayat.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-14T05:04:30.385Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MongoDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\MongoDB\\MongoDbContext.cs",
+              "RelativeDocumentMoniker": "Riwayat.Server\\MongoDB\\MongoDbContext.cs",
+              "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\MongoDB\\MongoDbContext.cs",
+              "RelativeToolTip": "Riwayat.Server\\MongoDB\\MongoDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T05:03:31.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DBEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Models\\DBEntity.cs",
+              "RelativeDocumentMoniker": "Riwayat.Server\\Models\\DBEntity.cs",
+              "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Models\\DBEntity.cs*",
+              "RelativeToolTip": "Riwayat.Server\\Models\\DBEntity.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T04:41:39.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:327751677:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DBService.cs",
+              "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Services\\DBService.cs",
+              "RelativeDocumentMoniker": "Riwayat.Server\\Services\\DBService.cs",
+              "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Services\\DBService.cs",
+              "RelativeToolTip": "Riwayat.Server\\Services\\DBService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T14:04:05.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Program.cs",
+              "RelativeDocumentMoniker": "Riwayat.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Program.cs",
+              "RelativeToolTip": "Riwayat.Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T15:55:30.87Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
