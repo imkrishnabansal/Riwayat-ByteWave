@@ -8,6 +8,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { AuthenticatorComponent } from './authenticator/authenticator.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { UserSearchLandingComponent } from './components/user-search-landing/user-search-landing.component';
 import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'user', component: UserDashboardComponent, data: { title: 'Riwayat - User Dashboard' } },
   { path: 'showcase', component: HomePageComponent, data: { title: 'Riwayat - Showcase' } },
   { path: 'userprofile', component: UserProfileComponent, data: { title: 'Riwayat - User Profile' } },
-  { path: 'adminprofile', component: AdminProfileComponent, data: { title: 'Riwayat - Admin Profile' } }
+  { path: 'adminprofile', component: AdminProfileComponent, data: { title: 'Riwayat - Admin Profile' } },
+  { path: 'search/:term', component:UserSearchLandingComponent, data: { title: 'Riwayat - Search Result' } }
 ];
 
 @NgModule({

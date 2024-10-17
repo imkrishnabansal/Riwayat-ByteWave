@@ -21,6 +21,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatNativeDateModule } from '@angular/material/core'; // Datepicker Adapter
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +43,8 @@ import { AdminEventCreatorComponent } from './components/admin-event-creator/adm
 import { AdminNotificationComponent } from './components/admin-notification/admin-notification.component';
 import { VendorListComponent } from './components/vendor-list/vendor-list.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UserSearchDialogComponent } from './components/user-search-dialog/user-search-dialog.component';
+import { UserSearchLandingComponent } from './components/user-search-landing/user-search-landing.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AdminProfileComponent,
     AdminEventCreatorComponent,
     AdminNotificationComponent,
-    VendorListComponent
+    VendorListComponent,
+    UserSearchDialogComponent,
+    UserSearchLandingComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +94,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatButtonToggleModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    MatAutocompleteModule,
+    HttpClientModule
 
   ],
   providers: [

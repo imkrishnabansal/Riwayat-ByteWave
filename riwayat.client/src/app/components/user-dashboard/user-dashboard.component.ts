@@ -8,6 +8,7 @@ import { UserCartComponent } from '../user-cart/user-cart.component';
 import { UserOrdersComponent } from '../user-orders/user-orders.component';
 import { UserFavoriteComponent } from '../user-favorite/user-favorite.component';
 import { UserSettingsComponent } from '../user-settings/user-settings.component';
+import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dialog.component';
 
 
 @Component({
@@ -61,6 +62,11 @@ export class UserDashboardComponent implements OnInit {
     this.router.navigate(['/userprofile']);
   }
 
+    // Navigate to search landing page with category name
+    browseCategory(categoryName: string) {
+      this.router.navigate(['/search', categoryName]);
+    }
+
   openNotificationDialog() {
     this.dialog.open(UserNotificationComponent,{
       width: '1000px', // Set the width of the dialog
@@ -101,6 +107,15 @@ export class UserDashboardComponent implements OnInit {
     this.dialog.open(UserSettingsComponent,{
       width: '1000px', // Set the width of the dialog
       height: '500px', // Set the height of the dialog
+      panelClass: 'custom-dialog-container', // Apply a custom CSS class
+      data: {} // Pass any data you want to share with the component
+    });
+  }
+
+  openSearchDialog(){
+    this.dialog.open(UserSearchDialogComponent,{
+      width: '1000px', // Set the width of the dialog
+      height: 'auto', // Set the height of the dialog
       panelClass: 'custom-dialog-container', // Apply a custom CSS class
       data: {} // Pass any data you want to share with the component
     });

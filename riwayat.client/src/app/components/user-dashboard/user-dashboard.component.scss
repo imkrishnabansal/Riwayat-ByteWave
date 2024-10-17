@@ -101,4 +101,40 @@ mat-toolbar {
   }
   
 
+  .search-spacer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+
+    button{
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
+        width: 90%;
+        border-radius: 8px;
+        border: 1px solid #d6a553;
+        color: #d6a553;
+      }
+    }
+  }
+
+  .spacer button {
+    width: 50%;
+      border-radius: 8px;
+      border: 1px solid #d6a553;
+      margin-left: 38%;
+      color: #d6a553;
+      
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+  }
+.custom-icon {
+  font-weight: bold;
+  font-size: 25.5px;
+}
   

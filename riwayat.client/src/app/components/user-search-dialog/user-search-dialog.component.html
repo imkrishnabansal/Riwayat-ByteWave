@@ -1,0 +1,41 @@
+<div class="user-search-dialog">
+  <!-- Searchbar with Autocomplete -->
+  <mat-form-field class="search-bar" appearance="outline">
+    <mat-label>Search Services</mat-label>
+    <input matInput [formControl]="searchControl" [matAutocomplete]="auto" (keydown.enter)="selectSearchOption(searchControl.value)">
+    <button mat-icon-button matSuffix (click)="selectSearchOption(searchControl.value)">
+      <mat-icon>search</mat-icon>
+    </button>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="selectSearchOption(option)">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <!-- 2x2 Grid of Suggestions -->
+  <div class="suggestions-grid">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card class="suggestion-card" (click)="selectSearchOption('Categories')">
+          <mat-card-title>Categories</mat-card-title>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="suggestion-card" (click)="selectSearchOption('Trending')">
+          <mat-card-title>Trending</mat-card-title>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="suggestion-card" (click)="selectSearchOption('Previously Ordered')">
+          <mat-card-title>Previously Ordered</mat-card-title>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="suggestion-card" (click)="selectSearchOption('New in the Market')">
+          <mat-card-title>New in the Market</mat-card-title>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
