@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { UserNotificationComponent } from '../user-notification/user-notification.component';
-import { UserCartComponent } from '../user-cart/user-cart.component';
-import { UserOrdersComponent } from '../user-orders/user-orders.component';
-import { UserFavoriteComponent } from '../user-favorite/user-favorite.component';
-import { UserSettingsComponent } from '../user-settings/user-settings.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -14,8 +9,7 @@ import { UserSettingsComponent } from '../user-settings/user-settings.component'
   styleUrls: ['./user-profile.component.scss'] // Corrected: 'styleUrls' should be plural
 })
 export class UserProfileComponent implements OnInit {
-  notificationBadge = 3;
-  cartBadge = 2;
+  
   profileData: any;
   profileImage: string | ArrayBuffer | null = null;
   isEditing: boolean = false;
@@ -24,59 +18,6 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProfile();
-  }
-
-  goToUserProfile() {
-    this.router.navigate(['/userprofile']);
-  }
-
-  goToUserHome() {
-    this.router.navigate(['/user']);
-  }
-
-  openNotificationDialog() {
-    this.dialog.open(UserNotificationComponent, {
-      width: '1000px',
-      height: '500px',
-      panelClass: 'custom-dialog-container',
-      data: {}
-    });
-  }
-
-  openCartDialog() {
-    this.dialog.open(UserCartComponent, {
-      width: '1000px',
-      height: '500px',
-      panelClass: 'custom-dialog-container',
-      data: {}
-    });
-  }
-
-  openOrdersDialog() {
-    this.dialog.open(UserOrdersComponent, {
-      width: '1000px',
-      height: '500px',
-      panelClass: 'custom-dialog-container',
-      data: {}
-    });
-  }
-
-  openFavoriteDialog() {
-    this.dialog.open(UserFavoriteComponent, {
-      width: '1000px',
-      height: '500px',
-      panelClass: 'custom-dialog-container',
-      data: {}
-    });
-  }
-
-  openSettingsDialog() {
-    this.dialog.open(UserSettingsComponent, {
-      width: '1000px',
-      height: '500px',
-      panelClass: 'custom-dialog-container',
-      data: {}
-    });
   }
 
   loadProfile() {

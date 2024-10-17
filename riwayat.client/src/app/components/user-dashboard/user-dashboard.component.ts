@@ -3,12 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
-import { UserNotificationComponent } from '../user-notification/user-notification.component';
-import { UserCartComponent } from '../user-cart/user-cart.component';
-import { UserOrdersComponent } from '../user-orders/user-orders.component';
-import { UserFavoriteComponent } from '../user-favorite/user-favorite.component';
-import { UserSettingsComponent } from '../user-settings/user-settings.component';
-import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dialog.component';
 
 
 @Component({
@@ -18,8 +12,6 @@ import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dia
 })
 export class UserDashboardComponent implements OnInit {
 
-  notificationBadge=3;
-  cartBadge = 2;
 
   categories = [
     {
@@ -58,67 +50,11 @@ export class UserDashboardComponent implements OnInit {
 
   }
 
-  goToUserProfile() {
-    this.router.navigate(['/userprofile']);
-  }
-
     // Navigate to search landing page with category name
     browseCategory(categoryName: string) {
       this.router.navigate(['/search', categoryName]);
     }
 
-  openNotificationDialog() {
-    this.dialog.open(UserNotificationComponent,{
-      width: '1000px', // Set the width of the dialog
-      height: '500px', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
-  }
-
-  openCartDialog() {
-    this.dialog.open(UserCartComponent,{
-      width: '1000px', // Set the width of the dialog
-      height: '500px', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
-  }
-
-  openOrdersDialog() {
-    this.dialog.open(UserOrdersComponent,{
-      width: '1000px', // Set the width of the dialog
-      height: '500px', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
-  }
-
-  openFavoriteDialog() {
-    this.dialog.open(UserFavoriteComponent,{
-      width: '1000px', // Set the width of the dialog
-      height: '500px', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
-  }
-
-  openSettingsDialog() {
-    this.dialog.open(UserSettingsComponent,{
-      width: '1000px', // Set the width of the dialog
-      height: '500px', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
-  }
-
-  openSearchDialog(){
-    this.dialog.open(UserSearchDialogComponent,{
-      width: '1000px', // Set the width of the dialog
-      height: 'auto', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
-  }
+ 
 
 }

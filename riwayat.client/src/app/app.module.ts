@@ -45,6 +45,7 @@ import { VendorListComponent } from './components/vendor-list/vendor-list.compon
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserSearchDialogComponent } from './components/user-search-dialog/user-search-dialog.component';
 import { UserSearchLandingComponent } from './components/user-search-landing/user-search-landing.component';
+import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { UserSearchLandingComponent } from './components/user-search-landing/use
     AdminNotificationComponent,
     VendorListComponent,
     UserSearchDialogComponent,
-    UserSearchLandingComponent
+    UserSearchLandingComponent,
+    UserNavbarComponent
   ],
   imports: [
     BrowserModule,
