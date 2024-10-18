@@ -1,5 +1,4 @@
-﻿
-public class DBEntity
+﻿public class DBEntity
 {
     public required string Id { get; set; }
     public required string Name { get; set; }

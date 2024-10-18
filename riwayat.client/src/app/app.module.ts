@@ -46,6 +46,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UserSearchDialogComponent } from './components/user-search-dialog/user-search-dialog.component';
 import { UserSearchLandingComponent } from './components/user-search-landing/user-search-landing.component';
 import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { UserNavbarComponent } from './components/user-navbar/user-navbar.compon
     MatSelectModule,
     MatProgressSpinnerModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSlideToggleModule
 
   ],
   providers: [

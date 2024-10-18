@@ -16,7 +16,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngular",
         policy => policy.WithOrigins("http://localhost:4200") // Angular app URL
                         .AllowAnyMethod()
-                        .AllowAnyHeader());
+                        .AllowAnyHeader()
+                        .AllowCredentials()); // If credentials like cookies or tokens are needed
 });
 
 // Add services to the container.

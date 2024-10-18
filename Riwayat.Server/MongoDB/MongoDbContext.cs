@@ -3,14 +3,16 @@ using Microsoft.Extensions.Options;
 
 public class MongoDbContext
 {
-    private readonly IMongoDatabase _database = null;
+    private readonly IMongoDatabase _database;
 
-    public MongoDbContext(IOptions<MongoDbSettings> settings)
+    public MongoDbContext(IOptions<MongoDbSettings> mongoDbSettings)
     {
-        var client = new MongoClient(settings.Value.ConnectionString);
-        if (client != null)
-            _database = client.GetDatabase(settings.Value.Database);
+        var settings = mongoDbSettings.Value;
+        var client = new MongoClient(settings.ConnectionString);
+        _database = client.GetDatabase(settings.DatabaseName);
     }
+
+    public IMongoDatabase Database => _database;
 
     public IMongoCollection<Vendor> Vendors
     {

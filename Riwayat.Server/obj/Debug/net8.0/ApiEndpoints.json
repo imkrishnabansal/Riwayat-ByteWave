@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "Riwayat.Controllers.LoginSignupController",
+    "Method": "Login",
+    "RelativePath": "api/LoginSignup/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginModel",
+        "Type": "Riwayat.Controllers.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Riwayat.Controllers.LoginSignupController",
+    "Method": "Signup",
+    "RelativePath": "api/LoginSignup/signup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "signupModel",
+        "Type": "Riwayat.Controllers.SignupModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendorsController",
+    "Method": "SearchVendors",
+    "RelativePath": "api/Vendors/search/{term}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "term",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

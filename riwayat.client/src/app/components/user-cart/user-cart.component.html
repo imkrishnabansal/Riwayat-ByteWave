@@ -1,1 +1,28 @@
-<p>user-cart works!</p>
+<div class="cart-container">
+    <h2>Your Cart</h2>
+  
+    <!-- Show this message if the cart is empty -->
+    <div *ngIf="orders.length === 0" class="empty-cart">
+      <p>Your cart is empty.</p>
+    </div>
+  
+    <!-- Show the cart items if the cart is not empty -->
+    <div *ngIf="orders.length > 0">
+      <div *ngFor="let order of orders; let i = index" class="cart-item">
+        <div class="item-details">
+          <p><strong>Service Name:</strong> {{ order.serviceName }}</p>
+          <p><strong>Vendor:</strong> {{ order.vendor }}</p>
+          <p><strong>Cost:</strong> ${{ order.cost }}</p>
+          <p><strong>Scheduled Date:</strong> {{ order.scheduledDate | date }}</p>
+        </div>
+  
+        <div class="item-actions">
+          <button mat-button (click)="editOrder(i)">Edit</button>
+          <button mat-button color="warn" (click)="removeOrder(i)">Remove</button>
+        </div>
+      </div>
+  
+      <button mat-raised-button color="primary" (click)="placeOrder()">Place Order</button>
+    </div>
+</div>
+  

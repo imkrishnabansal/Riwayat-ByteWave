@@ -45,7 +45,7 @@ export class UserNavbarComponent {
   openCartDialog() {
     this.dialog.open(UserCartComponent, {
       width: '1000px',
-      height: '500px',
+      height: 'auto',
       panelClass: 'custom-dialog-container',
       data: {}
     });
@@ -54,7 +54,7 @@ export class UserNavbarComponent {
   openOrdersDialog() {
     this.dialog.open(UserOrdersComponent, {
       width: '1000px',
-      height: '500px',
+      height: 'auto',
       panelClass: 'custom-dialog-container',
       data: {}
     });
@@ -72,7 +72,7 @@ export class UserNavbarComponent {
   openSettingsDialog() {
     this.dialog.open(UserSettingsComponent, {
       width: '1000px',
-      height: '500px',
+      height: 'auto',
       panelClass: 'custom-dialog-container',
       data: {}
     });

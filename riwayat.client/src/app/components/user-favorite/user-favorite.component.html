@@ -1,1 +1,22 @@
-<p>user-favorite works!</p>
+<div class="favorites-container">
+    <h2>Your Favorite Vendors</h2>
+  
+    <!-- If there are no favorite vendors -->
+    <div *ngIf="favoriteVendors.length === 0" class="no-favorites">
+      <p>You have no favorite vendors.</p>
+    </div>
+  
+    <!-- Show favorite vendors if available -->
+    <div *ngFor="let vendor of favoriteVendors; let i = index" class="vendor-item">
+      <div class="item-details">
+        <p><strong>Vendor Name:</strong> {{ vendor.name }}</p>
+        <p><strong>Service:</strong> {{ vendor.service }}</p>
+        <p><strong>Cost:</strong> ${{ vendor.cost }}</p>
+      </div>
+  
+      <div class="item-actions">
+        <button mat-button color="warn" (click)="unlikeVendor(i)">Unlike</button>
+      </div>
+    </div>
+  </div>
+  
