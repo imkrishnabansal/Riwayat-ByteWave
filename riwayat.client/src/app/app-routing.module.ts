@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { ServiceProviderDashboardComponent } from './components/service-provider-dashboard/service-provider-dashboard.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './components/admin-planner/admin-dashboard/admin-dashboard.component';
+import { ServiceProviderDashboardComponent } from './components/service-provider/service-provider-dashboard/service-provider-dashboard.component';
+import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component'; 
 import { AuthenticatorComponent } from './authenticator/authenticator.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { UserSearchLandingComponent } from './components/user-search-landing/user-search-landing.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component'; 
+import { AdminProfileComponent } from './components/admin-planner/admin-profile/admin-profile.component';
+import { UserSearchLandingComponent } from './components/user/user-search-landing/user-search-landing.component'; 
 import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [

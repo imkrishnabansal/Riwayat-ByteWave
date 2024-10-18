@@ -38,10 +38,10 @@ export class UserDashboardComponent implements OnInit {
     'Free DJ with Wedding Package'
   ];
 
-  previousOrders = [
-    'Italian Cuisine - ₹20,000',
-    'Banquet Hall - ₹50,000',
-    'Live Band - ₹15,000'
+  planners = [
+    {name: 'Harvy Specter', desc: 'Hot Shot Planner for Law Events'},
+    {name: 'Dr. House', desc: 'Crazy Doctor with Genius Brains, best for Medical Events'},
+    {name: 'Donna', desc: 'She Can Do Anything, cuz She is Donna'}
   ];
 
   constructor(private router: Router, public dialog: MatDialog) { }
