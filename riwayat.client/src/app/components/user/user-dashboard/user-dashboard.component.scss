@@ -1,5 +1,7 @@
 /* user-dashboard.component.scss */
-  .section {
+
+
+.section {
     margin: 20px;
     @media (max-width: 768px) {
       display: none;
@@ -23,7 +25,7 @@
     width: 100%;
   }
   
-  .category-card, .offer-card, .order-card {
+  .category-card, .offer-card, .planner-card {
     width: 450px;
     height: 200px;
     background-color: #f9f9f9;
@@ -41,7 +43,74 @@
   
   .service {
     margin: 5px 0;
+    color: white;
+    display: none;
+
+    :hover{
+      display: block;
+    }
+  }
+
+  .category-img {
+    position: relative; 
+    width: 100%;
+    height: 100%; /* Equal height for all images */
+    overflow: auto;
+    margin-bottom: -20px;
+  }
+
+  .category-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ensure the image fits within its container */
+    border-radius: 5px; /* Consistent border radius for all */
+    display: block;
   }
   
+  .category-text {
+    position: absolute;
+    top: 50%; /* Move text towards the bottom */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
 
- 
+  .offer-img {
+    position: relative; 
+    width: 100%;
+    height: 100%; /* Equal height for all images */
+    overflow: auto;
+    
+
+    & img{
+      width: 100%;
+      height: 100%;
+      object-fit:cover; /* Ensure the image fits within its container */
+      border-radius: 5px; /* Consistent border radius for all */
+      display: block;
+    }
+  }
+
+  .planner-card{ 
+    display: flex;
+    flex-direction: row;
+  }
+  .planner-img {
+    position: relative; 
+    max-width: 50%;
+    height: 100%; /* Equal height for all images */
+    overflow: auto;
+
+    & img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image fits within its container */
+      border-radius: 5px; /* Consistent border radius for all */
+      display: block;
+    }
+  }

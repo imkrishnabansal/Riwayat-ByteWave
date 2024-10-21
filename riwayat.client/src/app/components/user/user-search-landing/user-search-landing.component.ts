@@ -127,4 +127,16 @@ export class UserSearchLandingComponent implements OnInit {
   getStars(rating: number): Array<number> {
     return Array(Math.round(rating)).fill(0);
   }
+  
+  goToPlannerProfile(planner: string){
+    if (planner){
+      this.router.navigate(['/plannerprofile', planner])
+    }
+  }
+
+  goToVendorProfile(vendor: string){
+    if (vendor){
+      this.router.navigate(['/plannerprofile', vendor])
+    }
+  }
 }

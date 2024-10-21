@@ -47,6 +47,23 @@ import { UserSearchDialogComponent } from './components/user/user-search-dialog/
 import { UserSearchLandingComponent } from './components/user/user-search-landing/user-search-landing.component'; 
 import { UserNavbarComponent } from './components/user/user-navbar/user-navbar.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { PlannerProfileComponent } from './components/user/planner-profile/planner-profile.component';
+import { VendorProfileComponent } from './components/user/vendor-profile/vendor-profile.component';
+import { OfferLandingComponent } from './components/user/offer-landing/offer-landing.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatSliderModule } from '@angular/material/slider';
+
+
 
 @NgModule({
   declarations: [
@@ -68,7 +85,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     VendorListComponent,
     UserSearchDialogComponent,
     UserSearchLandingComponent,
-    UserNavbarComponent
+    UserNavbarComponent,
+    PlannerProfileComponent,
+    VendorProfileComponent,
+    OfferLandingComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +119,19 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatProgressSpinnerModule,
     MatAutocompleteModule,
     HttpClientModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDividerModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatTabsModule,
+    MatMenuModule,
+    MatStepperModule,
+    MatSliderModule
 
   ],
   providers: [

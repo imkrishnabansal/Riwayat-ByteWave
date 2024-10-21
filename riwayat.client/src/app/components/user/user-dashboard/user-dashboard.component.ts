@@ -16,32 +16,36 @@ export class UserDashboardComponent implements OnInit {
   categories = [
     {
       name: 'Catering',
-      trendingServices: ['Italian Cuisine', 'Indian Buffet', 'Chinese Special']
+      trendingServices: ['Italian Cuisine', 'Indian Buffet', 'Chinese Special'],
+      image: 'assets/catering.jpeg'
     },
     {
       name: 'Venue',
-      trendingServices: ['Beach Wedding', 'Garden Party', 'Banquet Hall']
+      trendingServices: ['Beach Wedding', 'Garden Party', 'Banquet Hall'],
+      image: 'assets/venue.webp'
     },
     {
       name: 'Entertainment',
-      trendingServices: ['Live Band', 'DJ', 'Stand-up Comedy']
+      trendingServices: ['Live Band', 'DJ', 'Stand-up Comedy'],
+      image: 'assets/entertainment.jpg'
     },
     {
       name: 'Decorations',
-      trendingServices: ['Floral Decor', 'Theme Lighting', 'Balloon Decor']
+      trendingServices: ['Floral Decor', 'Theme Lighting', 'Balloon Decor'],
+      image: 'assets/decorations.jpg'
     }
   ];
 
   offers = [
-    '10% off on Venue bookings',
-    'Flat ₹500 off on Catering services',
-    'Free DJ with Wedding Package'
+    {offer: 'Venue', image: 'assets/10p-venue.png'},
+    {offer: 'Catering', image: 'assets/500-caterer.png'},
+    {offer: 'Entertainment', image: 'assets/free-dj.png'}
   ];
 
   planners = [
-    {name: 'Harvy Specter', desc: 'Hot Shot Planner for Law Events'},
-    {name: 'Dr. House', desc: 'Crazy Doctor with Genius Brains, best for Medical Events'},
-    {name: 'Donna', desc: 'She Can Do Anything, cuz She is Donna'}
+    {name: 'Harvey Specter', desc: 'Hot Shot Planner for Law Events', img: 'assets/harvey.jpg'},
+    {name: 'Dr. House', desc: 'Crazy Doctor with Genius Brains, best for Medical Events', img: 'assets/dr-house2.jpg'},
+    {name: 'Donna', desc: 'She Can Do Anything, cuz She is Donna', img: 'assets/donna.jpg'}
   ];
 
   constructor(private router: Router, public dialog: MatDialog) { }
@@ -53,6 +57,24 @@ export class UserDashboardComponent implements OnInit {
     // Navigate to search landing page with category name
     browseCategory(categoryName: string) {
       this.router.navigate(['/search', categoryName]);
+    }
+
+    landToOffers(offer: string) {
+      if (offer) {
+        this.router.navigate(['/offer', offer]); 
+        }
+    }
+
+    goToPlannerProfile(planner: string){
+      if (planner){
+        this.router.navigate(['/plannerprofile', planner])
+      }
+    }
+
+    goToVendorProfile(vendor: string){
+      if (vendor){
+        this.router.navigate(['/plannerprofile', vendor])
+      }
     }
 
  

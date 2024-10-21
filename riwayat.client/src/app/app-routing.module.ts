@@ -9,6 +9,9 @@ import { AuthenticatorComponent } from './authenticator/authenticator.component'
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component'; 
 import { AdminProfileComponent } from './components/admin-planner/admin-profile/admin-profile.component';
 import { UserSearchLandingComponent } from './components/user/user-search-landing/user-search-landing.component'; 
+import { OfferLandingComponent } from './components/user/offer-landing/offer-landing.component';
+import { PlannerProfileComponent } from './components/user/planner-profile/planner-profile.component';
+import { VendorProfileComponent } from './components/user/vendor-profile/vendor-profile.component';
 import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
@@ -19,7 +22,10 @@ const routes: Routes = [
   { path: 'showcase', component: HomePageComponent, data: { title: 'Riwayat - Showcase' } },
   { path: 'userprofile', component: UserProfileComponent, data: { title: 'Riwayat - User Profile' } },
   { path: 'adminprofile', component: AdminProfileComponent, data: { title: 'Riwayat - Admin Profile' } },
-  { path: 'search/:term', component:UserSearchLandingComponent, data: { title: 'Riwayat - Search Result' } }
+  { path: 'search/:term', component:UserSearchLandingComponent, data: { title: 'Riwayat - Search Result' } },
+  { path: 'offer/:term', component: OfferLandingComponent, data: { title: 'Riwayat - Current Offers' } },
+  { path: 'plannerprofile/:term', component: PlannerProfileComponent, data: { ttile: 'Riwayat - Planner Profile' } },
+  { path: 'vendorprofile/:term', component: VendorProfileComponent, data: { ttile: 'Riwayat - Vendor Profile' } }
 ];
 
 @NgModule({

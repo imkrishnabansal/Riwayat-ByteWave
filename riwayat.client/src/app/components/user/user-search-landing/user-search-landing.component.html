@@ -4,7 +4,7 @@
   
   <div *ngIf="searchResults.length > 0; else noResults">
     <div *ngFor="let vendor of searchResults" class="vendor-card">
-      <mat-card class="vendor-card-content">
+      <mat-card class="vendor-card-content" (click)="goToVendorProfile(vendor.name)">
         <img class="vendor-img" mat-card-image [src]="vendor.image" alt="{{ vendor.name }} Image">
         <div class="vendor-det">
           <h3>{{ vendor.name }}</h3>
