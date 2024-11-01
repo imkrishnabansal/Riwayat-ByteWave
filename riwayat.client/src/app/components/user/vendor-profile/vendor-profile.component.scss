@@ -1,0 +1,51 @@
+.vendor-profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 97%;
+  
+    mat-card {
+      width: 100%;
+      height: 40%;
+      margin: 20px 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    .profile-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  
+      .vendor-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+      }
+  
+      .vendor-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+  
+      .vendor-info {
+        flex-grow: 1;
+        margin-left: 20px;
+  
+        h2 {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+  
+        p {
+          margin: 5px 0;
+        }
+      }
+    }
+}

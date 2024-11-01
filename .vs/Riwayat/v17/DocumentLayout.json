@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\controllers\\loginsignupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\controllers\\loginsignupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|c:\\users\\prakhar\\documents\\github\\riwayat\\riwayat.server\\controllers\\loginsignupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46632943-B704-4DAF-83BA-CCFBB535E396}|Riwayat.Server\\Riwayat.Server.csproj|solutionrelative:riwayat.server\\controllers\\loginsignupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\appsettings.json",
               "RelativeDocumentMoniker": "Riwayat.Server\\appsettings.json",
@@ -39,7 +39,8 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-14T05:04:30.385Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -51,40 +52,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "LoginSignupController.cs",
               "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Controllers\\LoginSignupController.cs",
               "RelativeDocumentMoniker": "Riwayat.Server\\Controllers\\LoginSignupController.cs",
               "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Controllers\\LoginSignupController.cs",
               "RelativeToolTip": "Riwayat.Server\\Controllers\\LoginSignupController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-18T07:05:12.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Riwayat.Server\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Properties\\launchSettings.json",
               "RelativeToolTip": "Riwayat.Server\\Properties\\launchSettings.json",
-              "ViewState": "AgIAABEAAAAAAAAAAAAYwCcAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-18T06:56:36.425Z"
+              "WhenOpened": "2024-10-18T06:56:36.425Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Program.cs",
               "RelativeDocumentMoniker": "Riwayat.Server\\Program.cs",
               "ToolTip": "C:\\Users\\Prakhar\\Documents\\GitHub\\Riwayat\\Riwayat.Server\\Program.cs",
               "RelativeToolTip": "Riwayat.Server\\Program.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAmwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T15:55:30.87Z"
+              "WhenOpened": "2024-09-27T15:55:30.87Z",
+              "EditorCaption": ""
             }
           ]
         }

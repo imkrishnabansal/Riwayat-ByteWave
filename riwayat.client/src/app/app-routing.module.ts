@@ -13,6 +13,7 @@ import { OfferLandingComponent } from './components/user/offer-landing/offer-lan
 import { PlannerProfileComponent } from './components/user/planner-profile/planner-profile.component';
 import { VendorProfileComponent } from './components/user/vendor-profile/vendor-profile.component';
 import { Title } from '@angular/platform-browser';
+import { OrderprevComponent } from './components/user/orderprev/orderprev.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticatorComponent, data: { title: 'Riwayat - Authenticator' } },
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'adminprofile', component: AdminProfileComponent, data: { title: 'Riwayat - Admin Profile' } },
   { path: 'search/:term', component:UserSearchLandingComponent, data: { title: 'Riwayat - Search Result' } },
   { path: 'offer/:term', component: OfferLandingComponent, data: { title: 'Riwayat - Current Offers' } },
-  { path: 'plannerprofile/:term', component: PlannerProfileComponent, data: { ttile: 'Riwayat - Planner Profile' } },
-  { path: 'vendorprofile/:term', component: VendorProfileComponent, data: { ttile: 'Riwayat - Vendor Profile' } }
+  { path: 'plannerprofile/:term', component: PlannerProfileComponent, data: { title: 'Riwayat - Planner Profile' } },
+  { path: 'vendorprofile/:term', component: VendorProfileComponent, data: { title: 'Riwayat - Vendor Profile' } },
+  { path: 'orderprev', component: OrderprevComponent, data: { title: 'Riwayat - Order Preview' } }
 ];
 
 @NgModule({

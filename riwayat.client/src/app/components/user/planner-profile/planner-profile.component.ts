@@ -8,7 +8,7 @@ interface Planner {
   bio: string;
   specialty: string;
   experience: number;
-  baseFare: string;
+  plannerFare: string;
   tiers: Array<{
     name: string;
     fare: string;
@@ -34,7 +34,7 @@ export class PlannerProfileComponent implements OnInit {
       bio: 'Hot-Shot Lawyer who likes to plan events nowadays, best for Law-related Events',
       specialty: 'Corporate Events',
       experience: 50,
-      baseFare: '$500',
+      plannerFare: '₹10,000',
       tiers: [
         { name: 'Basic', fare: '$1000', services: 'Venue & Catering', image: 'assets/basictier.png' },
         { name: 'Standard', fare: '$1900', services: 'Venue, Catering & Decorations', image: 'assets/stdtier.png' },
@@ -48,7 +48,7 @@ export class PlannerProfileComponent implements OnInit {
       bio: 'Crazy but Genius Doctor, Side Musician, Faked his Death for his friend, best suited for Parties and Fun Events',
       specialty: 'Parties & Birthdays',
       experience: 30,
-      baseFare: '$300',
+      plannerFare: '₹10,000',
       tiers: [
         { name: 'Basic', fare: '$1000', services: 'Venue & Catering', image: 'assets/basictier.png' },
         { name: 'Standard', fare: '$1900', services: 'Venue, Catering & Decorations', image: 'assets/stdtier.png' },
@@ -62,7 +62,7 @@ export class PlannerProfileComponent implements OnInit {
       bio: 'Amazing and Confident, can do Anything because She is Donna!!',
       specialty: 'Creative Events, Themed Parties',
       experience: 40,
-      baseFare: '$400',
+      plannerFare: '₹10,000',
       tiers: [
         { name: 'Basic', fare: '$1000', services: 'Venue & Catering', image: 'assets/basictier.png' },
         { name: 'Standard', fare: '$1900', services: 'Venue, Catering & Decorations', image: 'assets/stdtier.png' },
@@ -119,27 +119,40 @@ export class PlannerProfileComponent implements OnInit {
       eventTime: '',
       eventDescription: '',
       addons: {
-        freeSnacks: [],
-        waiterDiscount: [],
-        artistDiscount: []
+        freeSnacks: false,
+        waiterDiscount: false,
+        artistDiscount: false
       },
       customServices: {
-        customVenue: [],
-        customCatering: [],
-        customEntertainment: [],
-        customDecorations: [],
-        customWaiters: []
+        customVenue: false,
+        customCatering: false,
+        customEntertainment: false,
+        customDecorations: false,
+        customWaiters: false
       }
     });
   }
 
   confirmOrder(): void {
-    if (this.tierForm.valid) {
+    if (this.tierForm.valid && this.selectedPlanner && this.selectedTier) {
       const orderData = {
         tier: this.selectedTier.name,
-        ...this.tierForm.value
+        plannerName: this.selectedPlanner.name,
+        orderDetails: this.tierForm.value,
+        isPlannerOrder: true, // This indicates the order is for a vendor
+        plannerFare: this.selectedPlanner.plannerFare,  // Include plannerFare here
       };
-      console.log('Order Data:', orderData);
+
+      // Convert orderData to query parameters and navigate to '/orderprev'
+      const queryParams = {
+        ...orderData,
+        orderDetails: JSON.stringify(orderData.orderDetails) // serialize form data as JSON string
+      };
+
+      this.router.navigate(['/orderprev'], { queryParams });
+      console.log(queryParams);
+    } else {
+      console.error('Form is invalid or missing selected planner/tier');
     }
   }
 }

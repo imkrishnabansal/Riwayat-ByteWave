@@ -136,7 +136,7 @@ export class UserSearchLandingComponent implements OnInit {
 
   goToVendorProfile(vendor: string){
     if (vendor){
-      this.router.navigate(['/plannerprofile', vendor])
+      this.router.navigate(['/vendorprofile', vendor])
     }
   }
 }

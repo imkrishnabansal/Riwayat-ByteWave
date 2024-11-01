@@ -39,8 +39,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-14T05:04:30.385Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -73,8 +72,7 @@
               "RelativeToolTip": "Riwayat.Server\\Properties\\launchSettings.json",
               "ViewState": "AgIAABEAAAAAAAAAAAAYwCcAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-18T06:56:36.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T06:56:36.425Z"
             },
             {
               "$type": "Document",
@@ -86,8 +84,7 @@
               "RelativeToolTip": "Riwayat.Server\\Program.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAmwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T15:55:30.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T15:55:30.87Z"
             }
           ]
         }

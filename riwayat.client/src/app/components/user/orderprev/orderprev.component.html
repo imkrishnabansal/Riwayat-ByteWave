@@ -1,0 +1,161 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="body-container">
+  <div class="order-prev-container" *ngIf="isPlannerOrder">
+    <h1>Order Preview</h1>
+  
+    <div class="flex-container">
+      
+      <!-- Order Details Section -->
+      <div class="order-details-container">
+        <mat-card class="order-details">
+          <h2>Order Details</h2>
+  
+          <div class="form-fields">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Type</mat-label>
+              <input matInput [value]="orderDetails.eventType" disabled />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Date</mat-label>
+              <input matInput [matDatepicker]="picker" [value]="orderDetails.eventDate" disabled />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Time</mat-label>
+              <input matInput [value]="orderDetails.eventTime" disabled />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Description</mat-label>
+              <textarea matInput [value]="orderDetails.eventDescription" disabled></textarea>
+            </mat-form-field>
+          </div>
+          
+          <h3>Add-ons</h3>
+          <div class="addons">
+            <mat-checkbox disabled [checked]="orderDetails.addons?.freeSnacks">Free Snacks</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.addons?.waiterDiscount">Waiter Discount</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.addons?.artistDiscount">Artist Discount</mat-checkbox>
+          </div>
+  
+          <h3>Custom Services</h3>
+          <div class="custom-services">
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customVenue">Venue</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customCatering">Catering</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customDecorations">Decorations</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customEntertainment">Entertainment</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customWaiters">Waiters</mat-checkbox>
+          </div>
+        </mat-card>
+      </div>
+  
+      <!-- Planner and Price Info Section -->
+      <div class="right-panel">
+        <mat-card class="planner-details">
+          <div>
+            <h2>Planner Details</h2>
+          <p><strong>Name:</strong> {{ plannerName }}</p>
+          <p><strong>Tier:</strong> {{ tier }}</p>
+          <!-- <p><strong>Vendor Order:</strong> {{ isPlannerOrder ? 'Yes' : 'No' }}</p> -->
+          </div>
+          <div class="planner-image-container">
+            <img [src]="Vendorimage" alt="image" class="planner-image" />
+          </div>
+        </mat-card>
+  
+        <mat-card class="price-summary">
+          <h2>Total Cost</h2>
+          <p>{{ fare }}</p>
+        </mat-card>
+  
+        <button mat-button class="cmf-btn" >Confirm Booking</button>
+        <button mat-button class="other-btn" >Go Back</button>
+        <button mat-button class="other-btn" >Contact Support</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="order-prev-container" *ngIf="isVendorOrder">
+    <h1>Order Preview</h1>
+  
+    <div class="flex-container">
+      
+      <!-- Order Details Section -->
+      <div class="order-details-container">
+        <mat-card class="order-details">
+          <h2>Order Details</h2>
+  
+          <div class="form-fields">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Type</mat-label>
+              <input matInput [value]="orderDetails.eventType" disabled />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Date</mat-label>
+              <input matInput [matDatepicker]="picker" [value]="orderDetails.eventDate" disabled />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Time</mat-label>
+              <input matInput [value]="orderDetails.eventTime" disabled />
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Event Description</mat-label>
+              <textarea matInput [value]="orderDetails.eventDescription" disabled></textarea>
+            </mat-form-field>
+          </div>
+          
+          <h3>Add-ons</h3>
+          <div class="addons">
+            <mat-checkbox disabled [checked]="orderDetails.addons?.freeSnacks">Free Snacks</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.addons?.waiterDiscount">Waiter Discount</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.addons?.artistDiscount">Artist Discount</mat-checkbox>
+          </div>
+  
+          <h3>Custom Services</h3>
+          <div class="custom-services">
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customVenue">Venue</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customCatering">Catering</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customDecorations">Decorations</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customEntertainment">Entertainment</mat-checkbox><br>
+            <mat-checkbox disabled [checked]="orderDetails.customServices?.customWaiters">Waiters</mat-checkbox>
+          </div>
+        </mat-card>
+      </div>
+  
+      <!-- Planner and Price Info Section -->
+      <div class="right-panel">
+        <mat-card class="planner-details">
+          <div>
+            <h2>Planner Details</h2>
+          <p><strong>Name:</strong> {{ plannerName }}</p>
+          <p><strong>Tier:</strong> {{ tier }}</p>
+          <!-- <p><strong>Vendor Order:</strong> {{ isPlannerOrder ? 'Yes' : 'No' }}</p> -->
+          </div>
+          <div class="planner-image-container">
+            <img [src]="Vendorimage" alt="image" class="planner-image" />
+          </div>
+        </mat-card>
+  
+        <mat-card class="price-summary">
+          <h2>Total Cost</h2>
+          <p>{{ fare }}</p>
+        </mat-card>
+  
+        <button mat-button class="cmf-btn" >Confirm Booking</button>
+        <button mat-button class="other-btn" >Go Back</button>
+        <button mat-button class="other-btn" >Contact Support</button>
+      </div>
+    </div>
+  </div>
+  
+</div>

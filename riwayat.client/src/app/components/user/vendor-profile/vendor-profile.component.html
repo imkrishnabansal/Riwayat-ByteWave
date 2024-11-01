@@ -1,1 +1,22 @@
 <app-user-navbar></app-user-navbar>
+<div *ngIf="selectedVendor; else noVendorFound" class="vendor-profile-page">
+    <mat-card class="profile-header">
+        <div class="vendor-image-container">
+          <img [src]="selectedVendor.image" alt="{{ selectedVendor.name }}" class="vendor-image" />
+        </div>
+        <div class="vendor-info">
+          <h2>{{ selectedVendor.name }}</h2>
+          <p>{{ selectedVendor.description }}</p>
+          <p><strong>Category:</strong> {{ selectedVendor.category }}</p>
+          <p><strong>Experience:</strong> {{ selectedVendor.peopleServed }} people Served.</p>
+          <!-- <div class="profile-rating">
+            Rating: 
+            <mat-icon *ngFor="let star of getStars(selectedVendor?.rating)">star</mat-icon>
+            ({{ selectedVendor?.rating }} / 5)
+          </div> -->
+        </div>
+    </mat-card>
+</div>
+<ng-template #noVendorFound>
+    <p>No planner found. Please try again with a different name.</p>
+</ng-template>
