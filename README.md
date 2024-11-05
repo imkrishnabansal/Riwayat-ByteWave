@@ -1,6 +1,6 @@
 # Riwayat - Celebrating Moments, Honoring Traditions
 
-Riwayat is a web-based application designed for an Indian audience, built using the MEAN stack (MongoDB, Express.js, Angular, Node.js). This app allows users to book services related to Catering, Venue, Entertainment, and Decorations for events such as weddings, engagements, parties, and birthdays. It combines modern technology with the richness of traditional events, providing an intuitive experience to plan and celebrate special moments.
+Riwayat is a web-based application designed for an Indian audience, rebuilt using **ASP.NET** with **Angular** for the frontend. This app allows users to book services related to Catering, Venue, Entertainment, and Decorations for events such as weddings, engagements, parties, and birthdays. By blending modern technology with the richness of traditional events, Riwayat provides an intuitive experience for planning and celebrating special moments.
 
 ## Features
 
@@ -20,25 +20,26 @@ Riwayat is a web-based application designed for an Indian audience, built using 
 
 - **Booking Management**: A dashboard where users can view and manage their bookings.
 
-- **Secure Payments**: Integration with a secure payment gateway for seamless transactions.
+- **Secure Payments**: Integrated with **Razorpay** for secure, seamless transactions.
 
 - **Admin Dashboard**: Manage service providers, track bookings, and oversee user data.
 
 ## Tech Stack
 
 - **Frontend**: Angular
-- **Backend**: Node.js with Express.js
+- **Backend**: ASP.NET
 - **Database**: MongoDB
 - **Authentication**: JWT for secure authentication and OAuth for social logins
-- **Payment Gateway**: Integrated secure payment processor
+- **Payment Gateway**: Razorpay integration for secure payments
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js
+- .NET 6 SDK (or higher)
+- Node.js and Angular CLI
 - MongoDB
-- npm or yarn
+- Razorpay account
 
 ### Installation
 
@@ -47,25 +48,33 @@ Riwayat is a web-based application designed for an Indian audience, built using 
    git clone https://github.com/your-username/riwayat.git
    cd riwayat
    ```
-2. Install Dependencies:
+
+2. Set up Razorpay integration by configuring the API keys in `appsettings.json`:
+   ```json
+   "Razorpay": {
+     "KeyId": "your_key_id",
+     "KeySecret": "your_key_secret"
+   }
+   ```
+
+3. Install Dependencies:
    ```bash
-   npm install
-   cd client
-   npm install
+   dotnet restore
+   npm install --prefix ClientApp
    ```
 
 ### Running The Application
 
-1. Start the Backend Server:
+1. Start the ASP.NET Backend Server:
    ```bash
-   npm run server
+   dotnet run
    ```
-2. Start the Frontend Server:
+2. Start the Angular Frontend:
    ```bash
-   cd client
+   cd ClientApp
    npm start
    ```
 
 ### Contribution
 
-Contributions are welcome! Please fork the repository and create a pull request with your updates.
+Contributions are welcome! Please fork the repository, make updates, and create a pull request with your enhancements. 
