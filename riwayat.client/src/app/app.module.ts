@@ -64,6 +64,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSliderModule } from '@angular/material/slider';
 import { OrderprevComponent } from './components/user/orderprev/orderprev.component';
 import { PaymentDialogComponent } from './components/user/payment-dialog/payment-dialog.component';
+import { PaymentSuccessComponent } from './components/user/payment-success/payment-success.component';
 
 
 
@@ -92,7 +93,8 @@ import { PaymentDialogComponent } from './components/user/payment-dialog/payment
     VendorProfileComponent,
     OfferLandingComponent,
     OrderprevComponent,
-    PaymentDialogComponent
+    PaymentDialogComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-orderprev',
@@ -16,7 +18,7 @@ export class OrderprevComponent implements OnInit {
   fare: string | undefined;
   Vendorimage: string | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -40,4 +42,11 @@ export class OrderprevComponent implements OnInit {
       this.Vendorimage = tempPIURL;
     });
   }
+
+  openPaymentDialog(): void {
+    this.dialog.open(PaymentDialogComponent, {
+      width: '400px', // adjust the width as needed
+      data: { /* pass any data if needed */ }
+    });
+}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
 
 
 @Component({
@@ -53,5 +54,12 @@ export class UserProfileComponent implements OnInit {
       this.profileImage = reader.result;
     };
     reader.readAsDataURL(file);
+  }
+
+  openPaymentDialog(): void {
+    this.dialog.open(PaymentDialogComponent, {
+      width: '400px', // adjust the width as needed
+      data: { /* pass any data if needed */ }
+    });
   }
 }
