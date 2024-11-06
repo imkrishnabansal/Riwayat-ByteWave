@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 
-// Define the Vendor interface
 interface Vendor {
+  type: 'vendor';
   name: string;
   description: string;
   category: string;
@@ -12,6 +12,18 @@ interface Vendor {
   peopleServed: number;
   image: string;
 }
+
+interface Planner {
+  type: 'planner';
+  name: string;
+  bio: string;
+  specialty: string;
+  experience: number;
+  plannerFare: string;
+  image: string;
+}
+
+type SearchResult = Vendor | Planner;
 
 @Component({
   selector: 'app-user-search-landing',
@@ -21,9 +33,9 @@ interface Vendor {
 export class UserSearchLandingComponent implements OnInit {
   searchTerm: string = '';
 
-  // Explicitly type the allVendors and searchResults arrays
   allVendors: Vendor[] = [
     {
+      type: 'vendor',
       name: 'Elegant Decorations',
       description: 'Providing world-class decoration services for weddings, parties, and more.',
       category: 'Decorations',
@@ -32,6 +44,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Venue Royale',
       description: 'Premium venues for all types of events.',
       category: 'Venue',
@@ -40,6 +53,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Elite Catering',
       description: 'Top-notch catering with a wide range of cuisines.',
       category: 'Catering',
@@ -48,6 +62,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Star Entertainment',
       description: 'Bringing the best entertainment acts to your events.',
       category: 'Entertainment',
@@ -56,6 +71,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Grand Events',
       description: 'Luxury event management and decoration services.',
       category: 'Decorations',
@@ -64,6 +80,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Culinary Masters',
       description: 'Gourmet catering for weddings and corporate events.',
       category: 'Catering',
@@ -72,6 +89,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Spectacular Venues',
       description: 'Exquisite venues with a wide range of amenities.',
       category: 'Venue',
@@ -80,6 +98,7 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     },
     {
+      type: 'vendor',
       name: 'Ultimate DJ',
       description: 'Top-rated DJ services for any kind of event.',
       category: 'Entertainment',
@@ -88,10 +107,38 @@ export class UserSearchLandingComponent implements OnInit {
       image: 'assets/vendor.jpg'
     }
   ];
-  
 
-  // searchResults also needs to be explicitly typed as an array of Vendor objects
-  searchResults: Vendor[] = [];
+  planners: Planner[] = [
+    {
+      type: 'planner',
+      name: 'Harvey Specter',
+      bio: 'Hot-Shot Lawyer who likes to plan events nowadays, best for Law-related Events',
+      specialty: 'Corporate Events',
+      experience: 50,
+      plannerFare: '₹10,000',
+      image: 'assets/harvey.jpg'
+    },
+    {
+      type: 'planner',
+      name: 'Dr. House',
+      bio: 'Crazy but Genius Doctor, Side Musician, Faked his Death for his friend, best suited for Parties and Fun Events',
+      specialty: 'Parties & Birthdays',
+      experience: 30,
+      plannerFare: '₹10,000',
+      image: 'assets/dr-house2.jpg'
+    },
+    {
+      type: 'planner',
+      name: 'Donna',
+      bio: 'Amazing and Confident, can do Anything because She is Donna!!',
+      specialty: 'Creative Events, Themed Parties',
+      experience: 40,
+      plannerFare: '₹10,000',
+      image: 'assets/donna.jpg'
+    }
+  ];
+
+  searchResults: SearchResult[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -106,37 +153,47 @@ export class UserSearchLandingComponent implements OnInit {
     });
   }
 
-  // Function to filter vendors based on the search term
   filterVendors(): void {
     const searchLower = this.searchTerm ? this.searchTerm.toLowerCase() : '';
   
-    if (!searchLower || searchLower === 'all') {
-      // If the search term is null, empty, or 'all', display all vendors
-      this.searchResults = this.allVendors;
-    } else {
-      // Otherwise, filter vendors by name or category
-      this.searchResults = this.allVendors.filter(vendor =>
-        vendor.name.toLowerCase().includes(searchLower) || 
-        vendor.category.toLowerCase().includes(searchLower)
-      );
-    }
+    // Clear previous results
+    this.searchResults = [];
   
-    console.log('Filtered vendors:', this.searchResults);  // Debug log
+    if (['vendor', 'vendors'].includes(searchLower)) {
+      // If the search term indicates vendors, show all vendors
+      this.searchResults = [...this.allVendors];
+    } else if (['planner', 'planners', 'plan'].includes(searchLower)) {
+      // If the search term indicates planners, show all planners
+      this.searchResults = [...this.planners];
+    } else if (!searchLower || searchLower === 'all') {
+      // Show all vendors and planners if search term is empty or 'all'
+      this.searchResults = [...this.allVendors, ...this.planners];
+    } else {
+      // Otherwise, filter both vendors and planners by name or category
+      this.searchResults = [
+        ...this.allVendors.filter(vendor =>
+          vendor.name.toLowerCase().includes(searchLower) || 
+          vendor.category.toLowerCase().includes(searchLower)
+        ),
+        ...this.planners.filter(planner =>
+          planner.name.toLowerCase().includes(searchLower) || 
+          planner.specialty.toLowerCase().includes(searchLower)
+        )
+      ];
+    }
+    
+    console.log('Filtered results:', this.searchResults);  // Debug log
   }
 
   getStars(rating: number): Array<number> {
     return Array(Math.round(rating)).fill(0);
   }
-  
-  goToPlannerProfile(planner: string){
-    if (planner){
-      this.router.navigate(['/plannerprofile', planner])
-    }
-  }
 
-  goToVendorProfile(vendor: string){
-    if (vendor){
-      this.router.navigate(['/vendorprofile', vendor])
+  goToProfile(result: SearchResult) {
+    if (result.type === 'vendor') {
+      this.router.navigate(['/vendorprofile', result.name]);
+    } else if (result.type === 'planner') {
+      this.router.navigate(['/plannerprofile', result.name]);
     }
   }
 }
