@@ -149,25 +149,39 @@ export class UserSearchLandingComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.searchTerm = params['term'];
-      this.filterResults();
+      this.filterVendors();
     });
   }
 
-  filterResults(): void {
+  filterVendors(): void {
     const searchLower = this.searchTerm ? this.searchTerm.toLowerCase() : '';
-
-    const vendorResults = this.allVendors.filter(vendor =>
-      vendor.name.toLowerCase().includes(searchLower) || 
-      vendor.category.toLowerCase().includes(searchLower)
-    );
-
-    const plannerResults = this.planners.filter(planner =>
-      planner.name.toLowerCase().includes(searchLower) || 
-      planner.specialty.toLowerCase().includes(searchLower)
-    );
-
-    this.searchResults = [...vendorResults, ...plannerResults];
-
+  
+    // Clear previous results
+    this.searchResults = [];
+  
+    if (['vendor', 'vendors'].includes(searchLower)) {
+      // If the search term indicates vendors, show all vendors
+      this.searchResults = [...this.allVendors];
+    } else if (['planner', 'planners', 'plan'].includes(searchLower)) {
+      // If the search term indicates planners, show all planners
+      this.searchResults = [...this.planners];
+    } else if (!searchLower || searchLower === 'all') {
+      // Show all vendors and planners if search term is empty or 'all'
+      this.searchResults = [...this.allVendors, ...this.planners];
+    } else {
+      // Otherwise, filter both vendors and planners by name or category
+      this.searchResults = [
+        ...this.allVendors.filter(vendor =>
+          vendor.name.toLowerCase().includes(searchLower) || 
+          vendor.category.toLowerCase().includes(searchLower)
+        ),
+        ...this.planners.filter(planner =>
+          planner.name.toLowerCase().includes(searchLower) || 
+          planner.specialty.toLowerCase().includes(searchLower)
+        )
+      ];
+    }
+    
     console.log('Filtered results:', this.searchResults);  // Debug log
   }
 
