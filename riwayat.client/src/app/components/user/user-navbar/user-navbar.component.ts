@@ -17,8 +17,8 @@ import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dia
 
 
 export class UserNavbarComponent {
-  notificationBadge = 3;
-  cartBadge = 2;
+  notificationBadge: number = 3;
+  cartBadge: number = 2;
 
   constructor(private router: Router, public dialog: MatDialog) { }
 
