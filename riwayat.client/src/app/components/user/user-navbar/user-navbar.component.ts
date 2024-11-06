@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { UserNotificationComponent } from '../user-notification/user-notification.component';
 import { UserCartComponent } from '../user-cart/user-cart.component';
@@ -12,17 +12,48 @@ import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dia
 @Component({
   selector: 'app-user-navbar',
   templateUrl: './user-navbar.component.html',
-  styleUrl: './user-navbar.component.scss'
+  styleUrls: ['./user-navbar.component.scss']
 })
-
-
 export class UserNavbarComponent {
-  notificationBadge: number = 3;
-  cartBadge: number = 2;
+  private searchDialogRef: MatDialogRef<UserSearchDialogComponent> | null = null;
 
   constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    // Listen for the '/' keypress
+    window.addEventListener('keydown', this.handleKeyDown.bind(this));
+  }
+
+  // Clean up the event listener on component destruction
+  ngOnDestroy(): void {
+    window.removeEventListener('keydown', this.handleKeyDown.bind(this));
+  }
+
+  private handleKeyDown(event: KeyboardEvent): void {
+    if (event.key === '/') {
+      event.preventDefault(); // Prevent default browser behavior
+      this.toggleSearchDialog();
+    }
+  }
+
+  toggleSearchDialog(): void {
+    if (this.searchDialogRef) {
+      // If dialog is open, close it
+      this.searchDialogRef.close();
+      this.searchDialogRef = null;
+    } else {
+      // If dialog is not open, open it
+      this.searchDialogRef = this.dialog.open(UserSearchDialogComponent, {
+        width: '1000px',
+        height: 'auto',
+        panelClass: 'custom-dialog-container',
+      });
+
+      // Clear the reference when dialog closes
+      this.searchDialogRef.afterClosed().subscribe(() => {
+        this.searchDialogRef = null;
+      });
+    }
   }
 
   goToUserProfile() {
@@ -38,7 +69,6 @@ export class UserNavbarComponent {
       width: '1000px',
       height: '500px',
       panelClass: 'custom-dialog-container',
-      data: {}
     });
   }
 
@@ -47,7 +77,6 @@ export class UserNavbarComponent {
       width: '1000px',
       height: 'auto',
       panelClass: 'custom-dialog-container',
-      data: {}
     });
   }
 
@@ -56,7 +85,6 @@ export class UserNavbarComponent {
       width: '1000px',
       height: 'auto',
       panelClass: 'custom-dialog-container',
-      data: {}
     });
   }
 
@@ -65,7 +93,6 @@ export class UserNavbarComponent {
       width: '1000px',
       height: '500px',
       panelClass: 'custom-dialog-container',
-      data: {}
     });
   }
 
@@ -74,16 +101,6 @@ export class UserNavbarComponent {
       width: '1000px',
       height: 'auto',
       panelClass: 'custom-dialog-container',
-      data: {}
-    });
-  }
-
-  openSearchDialog() {
-    this.dialog.open(UserSearchDialogComponent, {
-      width: '1000px',
-      height: 'auto',
-      panelClass: 'custom-dialog-container',
-      data: {}
     });
   }
 }
