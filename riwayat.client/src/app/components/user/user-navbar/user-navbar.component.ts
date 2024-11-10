@@ -8,6 +8,7 @@ import { UserOrdersComponent } from '../user-orders/user-orders.component';
 import { UserFavoriteComponent } from '../user-favorite/user-favorite.component';
 import { UserSettingsComponent } from '../user-settings/user-settings.component';
 import { UserSearchDialogComponent } from '../user-search-dialog/user-search-dialog.component';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 @Component({
   selector: 'app-user-navbar',
@@ -21,6 +22,7 @@ export class UserNavbarComponent implements OnDestroy {
   private ordersDialogRef: MatDialogRef<UserOrdersComponent> | null = null;
   private favoriteDialogRef: MatDialogRef<UserFavoriteComponent> | null = null;
   private settingsDialogRef: MatDialogRef<UserSettingsComponent> | null = null;
+  private userProfileDialogRef: MatDialogRef<UserProfileComponent> | null = null;
 
   constructor(private router: Router, public dialog: MatDialog) {
     // Listen for the '/' keypress
@@ -109,7 +111,14 @@ export class UserNavbarComponent implements OnDestroy {
   }
 
   goToUserProfile(): void {
-    this.router.navigate(['/userprofile']);
+    if (!this.userProfileDialogRef) {
+      this.userProfileDialogRef = this.dialog.open(UserProfileComponent, {
+        width: '1000px',
+        height: 'auto',
+        panelClass: 'custom-dialog-container',
+      });
+      this.userProfileDialogRef.afterClosed().subscribe(() => this.userProfileDialogRef = null);
+    }
   }
 
   goToUserHome(): void {

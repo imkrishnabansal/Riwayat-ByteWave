@@ -1,7 +1,9 @@
+// authenticator.component.ts
 import { Component, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DevService } from '../dev-service.service'; 
 
 @Component({
   selector: 'app-authenticator',
@@ -12,9 +14,14 @@ export class AuthenticatorComponent {
   isLogin: boolean = true;
   authForm: FormGroup;
   newAuthForm: FormGroup;
-  superUser: string = 'Welcome, Big Daddy Boss';
+  teamMembers: any[] = [];
 
-  constructor(private router: Router, @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>, private fb: FormBuilder) {
+  constructor(
+    private router: Router,
+    @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>,
+    private fb: FormBuilder,
+    private devService: DevService
+  ) {
     this.authForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -27,6 +34,13 @@ export class AuthenticatorComponent {
     });
   }
 
+  ngOnInit(): void {
+    // Fetch team member data on component initialization
+    this.devService.getTeamMembers().subscribe((data) => {
+      this.teamMembers = data;
+    });
+  }
+
   toggleAuth() {
     this.isLogin = !this.isLogin;
   }
@@ -35,14 +49,18 @@ export class AuthenticatorComponent {
     if (this.isLogin) {
       if (this.authForm.valid) {
         const { username, password } = this.authForm.value;
-        // Login logic
-        if (username === 'admin' && password === 'admin') {
-          this.router.navigate(['/admin']);
-          alert(this.superUser)
+
+        // Check credentials against team members
+        const member = this.teamMembers.find(
+          (member) => member.username === username && member.password === password
+        );
+
+        if (member) {
+          alert(`Welcome, ${member.name}`);
+          this.router.navigate(['/user']);  // Adjust this route if needed
         } else if (username === 'user' && password === 'user') {
           this.router.navigate(['/user']);
-        } else if (username === 'serviceprov' && password === 'serviceprov') {
-          this.router.navigate(['/serviceprov']);
+          alert("Weelcome, User");
         } else {
           alert('Invalid credentials');
         }

@@ -62,4 +62,9 @@ export class UserProfileComponent implements OnInit {
       data: { /* pass any data if needed */ }
     });
   }
+
+  logOut(){
+    this.dialog.closeAll()
+    this.router.navigate(['/'])
+  }
 }

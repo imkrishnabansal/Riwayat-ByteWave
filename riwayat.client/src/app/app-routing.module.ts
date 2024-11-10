@@ -16,6 +16,7 @@ import { Title } from '@angular/platform-browser';
 import { OrderprevComponent } from './components/user/orderprev/orderprev.component';
 import { PaymentSuccessComponent } from './components/user/payment-success/payment-success.component';
 import { PaymentInProgressComponent } from './components/user/payment-in-progress/payment-in-progress.component';
+import { SupportComponent } from './components/support/support.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticatorComponent, data: { title: 'Riwayat - Authenticator' } },
@@ -23,7 +24,7 @@ const routes: Routes = [
   // { path: 'serviceprov', component: ServiceProviderDashboardComponent, data: { title: 'Riwayat - Service Provider Dashboard' } },
   { path: 'user', component: UserDashboardComponent, data: { title: 'Riwayat - User Dashboard' } },
   { path: 'showcase', component: HomePageComponent, data: { title: 'Riwayat - Showcase' } },
-  { path: 'userprofile', component: UserProfileComponent, data: { title: 'Riwayat - User Profile' } },
+  // { path: 'userprofile', component: UserProfileComponent, data: { title: 'Riwayat - User Profile' } },
   { path: 'adminprofile', component: AdminProfileComponent, data: { title: 'Riwayat - Admin Profile' } },
   { path: 'search/:term', component:UserSearchLandingComponent, data: { title: 'Riwayat - Search Result' } },
   { path: 'offer/:term', component: OfferLandingComponent, data: { title: 'Riwayat - Current Offers' } },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'vendorprofile/:term', component: VendorProfileComponent, data: { title: 'Riwayat - Vendor Profile' } },
   { path: 'orderprev', component: OrderprevComponent, data: { title: 'Riwayat - Order Preview' } },
   { path: 'paysuccess', component: PaymentSuccessComponent, data: { title: 'Riwayat - Payment Successful' } },
-  { path: 'payinprogress', component: PaymentInProgressComponent, data: { title: 'Riwayat - Payment in Progress' } }
+  { path: 'payinprogress', component: PaymentInProgressComponent, data: { title: 'Riwayat - Payment in Progress' } },
+  { path: 'support', component: SupportComponent, data: { title: 'Riwayat - Support & Team' } }
 ];
 
 @NgModule({

@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Prakhar Tripathi",
+        "role": "Developer",
+        "password": "imprakhar",
+        "username": "imprakhartripathi",
+        "email": "imprakhartripathiofficial@gmail.com",
+        "image": "assets/team/prakhar.png"
+        
+    },
+    {
+        "name": "Krishna Bansal",
+        "role": "Developer",
+        "password": "123",
+        "username": "imkrishnabansal",
+        "email": "lalibansa454@gmail.com",
+        "image": "assets/team/krishna.png"
+        
+    },
+    {
+        "name": "Akash Agrawal",
+        "role": "Developer",
+        "password": "123",
+        "username": "itsakashagrawal",
+        "email": "akash@gmail.com",
+        "image": "assets/team/akash.png"
+        
+    },
+    {
+        "name": "Aditya Vashishth",
+        "role": "Developer",
+        "password": "123",
+        "username": "ThAditya",
+        "email": "aditya@gmail.com",
+        "image": "assets/team/aditya.png"
+        
+    }
+]
