@@ -15,6 +15,7 @@ import { VendorProfileComponent } from './components/user/vendor-profile/vendor-
 import { Title } from '@angular/platform-browser';
 import { OrderprevComponent } from './components/user/orderprev/orderprev.component';
 import { PaymentSuccessComponent } from './components/user/payment-success/payment-success.component';
+import { PaymentInProgressComponent } from './components/user/payment-in-progress/payment-in-progress.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticatorComponent, data: { title: 'Riwayat - Authenticator' } },
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'plannerprofile/:term', component: PlannerProfileComponent, data: { title: 'Riwayat - Planner Profile' } },
   { path: 'vendorprofile/:term', component: VendorProfileComponent, data: { title: 'Riwayat - Vendor Profile' } },
   { path: 'orderprev', component: OrderprevComponent, data: { title: 'Riwayat - Order Preview' } },
-  { path: 'paysuccess', component: PaymentSuccessComponent, data: { title: 'Riwayat - Payment Successful' } }
+  { path: 'paysuccess', component: PaymentSuccessComponent, data: { title: 'Riwayat - Payment Successful' } },
+  { path: 'payinprogress', component: PaymentInProgressComponent, data: { title: 'Riwayat - Payment in Progress' } }
 ];
 
 @NgModule({
