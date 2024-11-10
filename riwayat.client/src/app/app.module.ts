@@ -65,6 +65,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { OrderprevComponent } from './components/user/orderprev/orderprev.component';
 import { PaymentDialogComponent } from './components/user/payment-dialog/payment-dialog.component';
 import { PaymentSuccessComponent } from './components/user/payment-success/payment-success.component';
+import { PaymentInProgressComponent } from './components/user/payment-in-progress/payment-in-progress.component';
 
 
 
@@ -94,7 +95,8 @@ import { PaymentSuccessComponent } from './components/user/payment-success/payme
     OfferLandingComponent,
     OrderprevComponent,
     PaymentDialogComponent,
-    PaymentSuccessComponent
+    PaymentSuccessComponent,
+    PaymentInProgressComponent
   ],
   imports: [
     BrowserModule,
