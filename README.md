@@ -1,4 +1,5 @@
 # Riwayat - Celebrating Moments, Honoring Traditions
+# Changes
 
 Riwayat is a web-based application designed for an Indian audience, rebuilt using **ASP.NET** with **Angular** for the frontend. This app allows users to book services related to Catering, Venue, Entertainment, and Decorations for events such as weddings, engagements, parties, and birthdays. By blending modern technology with the richness of traditional events, Riwayat provides an intuitive experience for planning and celebrating special moments.
 
