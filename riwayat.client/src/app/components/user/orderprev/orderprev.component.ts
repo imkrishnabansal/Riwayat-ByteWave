@@ -71,4 +71,8 @@ export class OrderprevComponent implements OnInit {
       this.router.navigate(['/vendorprofile', this.orderDetails.vendorName])
     }
   }
+
+  goToSupport(){
+    this.router.navigate(['/support']);
+  }
 }

@@ -66,6 +66,7 @@ import { OrderprevComponent } from './components/user/orderprev/orderprev.compon
 import { PaymentDialogComponent } from './components/user/payment-dialog/payment-dialog.component';
 import { PaymentSuccessComponent } from './components/user/payment-success/payment-success.component';
 import { PaymentInProgressComponent } from './components/user/payment-in-progress/payment-in-progress.component';
+import { SupportComponent } from './components/support/support.component';
 
 
 
@@ -96,7 +97,8 @@ import { PaymentInProgressComponent } from './components/user/payment-in-progres
     OrderprevComponent,
     PaymentDialogComponent,
     PaymentSuccessComponent,
-    PaymentInProgressComponent
+    PaymentInProgressComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
