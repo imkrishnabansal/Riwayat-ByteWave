@@ -17,6 +17,7 @@ import { OrderprevComponent } from './components/user/orderprev/orderprev.compon
 import { PaymentSuccessComponent } from './components/user/payment-success/payment-success.component';
 import { PaymentInProgressComponent } from './components/user/payment-in-progress/payment-in-progress.component';
 import { SupportComponent } from './components/support/support.component';
+import { OrderDisplayComponent } from './components/user/order-display/order-display.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticatorComponent, data: { title: 'Riwayat - Authenticator' } },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'orderprev', component: OrderprevComponent, data: { title: 'Riwayat - Order Preview' } },
   { path: 'paysuccess', component: PaymentSuccessComponent, data: { title: 'Riwayat - Payment Successful' } },
   { path: 'payinprogress', component: PaymentInProgressComponent, data: { title: 'Riwayat - Payment in Progress' } },
-  { path: 'support', component: SupportComponent, data: { title: 'Riwayat - Support & Team' } }
+  { path: 'support', component: SupportComponent, data: { title: 'Riwayat - Support & Team' } },
+  { path: 'displayorder', component: OrderDisplayComponent, data: { title: 'Riwayat - Your Order' } }
 ];
 
 @NgModule({

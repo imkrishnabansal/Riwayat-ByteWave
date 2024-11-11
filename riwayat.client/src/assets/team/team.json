@@ -18,20 +18,20 @@
         
     },
     {
-        "name": "Akash Agrawal",
+        "name": "Akash Agarwal",
         "role": "Developer",
-        "password": "123",
+        "password": "honeyagarwal",
         "username": "itsakashagrawal",
-        "email": "akash@gmail.com",
+        "email": "honeyagarwal043@gmail.com",
         "image": "assets/team/akash.png"
         
     },
     {
         "name": "Aditya Vashishth",
         "role": "Developer",
-        "password": "123",
+        "password": "adityapandit",
         "username": "ThAditya",
-        "email": "aditya@gmail.com",
+        "email": "aditya.vashishth95@gmail.com",
         "image": "assets/team/aditya.png"
         
     }

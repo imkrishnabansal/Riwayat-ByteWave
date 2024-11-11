@@ -72,6 +72,7 @@ export class AuthenticatorComponent {
       if (this.newAuthForm.valid) {
         alert('Account created successfully');
         console.log(this.newAuthForm.value);
+        this.router.navigate(['/user'])
         // Additional account creation handling
       } else {
         alert('Please fill out all fields correctly');

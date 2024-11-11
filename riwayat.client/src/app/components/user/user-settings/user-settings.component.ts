@@ -15,8 +15,8 @@ interface UserSettings {
 export class UserSettingsComponent {
   settings: UserSettings = {
     notifications: true,
-    homeAddress: '123 Home St, City, Country',
-    officeAddress: '456 Office Rd, City, Country',
+    homeAddress: '159, Radha City, Mathura',
+    officeAddress: 'GLA University, NH19, Mathura',
     latestOffers: false
   };
 
