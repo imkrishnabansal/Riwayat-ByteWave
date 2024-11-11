@@ -39,7 +39,7 @@ export class UserDashboardComponent implements OnInit {
   offers = [
     {offer: 'Venue', image: 'assets/10p-venue.png'},
     {offer: 'Catering', image: 'assets/500-caterer.png'},
-    {offer: 'Entertainment', image: 'assets/free-dj.png'}
+    {offer: 'DJ', image: 'assets/free-dj.png'}
   ];
 
   planners = [
