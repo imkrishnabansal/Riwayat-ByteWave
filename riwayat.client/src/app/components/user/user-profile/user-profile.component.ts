@@ -24,13 +24,13 @@ export class UserProfileComponent implements OnInit {
   loadProfile() {
     // Fetch profile data and populate the form
     this.profileData = {
-      name: 'Prakhar Tripathi',
-      email: 'imprakhartripathiofficial@gmail.com',
-      phone: '+91 8707406448',
-      userID: '4269'
+      name: 'Guest User',
+      email: 'guestuser@riwayat.com',
+      phone: 'Not Available',
+      userID: 'Not Available'
     };
     this.editedProfileData = { ...this.profileData };
-    this.profileImage = 'assets/profile-image.jpg'; // Placeholder image
+    this.profileImage = 'assets/user.png'; // Placeholder image
   }
 
   onEdit() {
