@@ -11,7 +11,7 @@
 
   <div class="profile-details">
     <h2>{{ profileData.name }}</h2>
-    <p *ngIf="!isEditing"><strong>User ID:</strong> {{ profileData.userID }}</p>
+    <p *ngIf="!isEditing"><strong>User ID:</strong> {{ profileData.username }}</p>
     <mat-form-field *ngIf="isEditing" appearance="outline">
       <mat-label>Bio</mat-label>
       <textarea matInput [(ngModel)]="editedProfileData.bio"></textarea>

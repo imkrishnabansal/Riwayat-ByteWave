@@ -1,9 +1,9 @@
-// authenticator.component.ts
 import { Component, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DevService } from '../dev-service.service'; 
+import { DevService } from '../dev-service.service';
+import { AuthService } from '../auth.service'; // Import AuthService
 
 @Component({
   selector: 'app-authenticator',
@@ -20,7 +20,8 @@ export class AuthenticatorComponent {
     private router: Router,
     @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>,
     private fb: FormBuilder,
-    private devService: DevService
+    private devService: DevService,
+    private authService: AuthService // Inject AuthService
   ) {
     this.authForm = this.fb.group({
       username: ['', Validators.required],
@@ -35,14 +36,9 @@ export class AuthenticatorComponent {
   }
 
   ngOnInit(): void {
-    // Fetch team member data on component initialization
     this.devService.getTeamMembers().subscribe((data) => {
       this.teamMembers = data;
     });
-  }
-
-  toggleAuth() {
-    this.isLogin = !this.isLogin;
   }
 
   onSubmit() {
@@ -57,10 +53,13 @@ export class AuthenticatorComponent {
 
         if (member) {
           alert(`Welcome, ${member.name}`);
-          this.router.navigate(['/user']);  // Adjust this route if needed
-        } else if (username === 'user' && password === 'user') {
+          this.authService.login(member);  // Store user in AuthService
           this.router.navigate(['/user']);
-          alert("Weelcome, User");
+        } else if (username === 'user' && password === 'user') {
+          const guestUser = { name: "Guest User", username: "user" };
+          this.authService.login(guestUser);  // Store guest user
+          alert("Welcome, User");
+          this.router.navigate(['/user']);
         } else {
           alert('Invalid credentials');
         }
@@ -68,12 +67,11 @@ export class AuthenticatorComponent {
         alert('Please fill out all fields correctly');
       }
     } else {
-      // Sign-up logic
+      // Handle sign-up logic here
       if (this.newAuthForm.valid) {
         alert('Account created successfully');
         console.log(this.newAuthForm.value);
-        this.router.navigate(['/user'])
-        // Additional account creation handling
+        this.router.navigate(['/user']);
       } else {
         alert('Please fill out all fields correctly');
       }
@@ -83,6 +81,10 @@ export class AuthenticatorComponent {
     if (this.dialogRef) {
       this.dialogRef.close();
     }
+  }
+
+  toggleAuth() {
+    this.isLogin = !this.isLogin;
   }
 
   goToShowcase() {

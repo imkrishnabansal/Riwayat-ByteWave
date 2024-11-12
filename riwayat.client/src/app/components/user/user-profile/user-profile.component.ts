@@ -1,36 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../../../auth.service'; // Import AuthService
 import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
-
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss'] // Corrected: 'styleUrls' should be plural
+  styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  
   profileData: any;
   profileImage: string | ArrayBuffer | null = null;
   isEditing: boolean = false;
   editedProfileData: any;
-  constructor(private router: Router, public dialog: MatDialog) { }
+
+  constructor(private router: Router, public dialog: MatDialog, private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.loadProfile();
-  }
-
-  loadProfile() {
-    // Fetch profile data and populate the form
-    this.profileData = {
-      name: 'Guest User',
-      email: 'guestuser@riwayat.com',
-      phone: 'Not Available',
-      userID: 'Not Available'
-    };
+    // Fetch logged-in user data from AuthService
+    this.profileData = this.authService.getCurrentUser();
     this.editedProfileData = { ...this.profileData };
-    this.profileImage = 'assets/user.png'; // Placeholder image
+    this.profileImage = this.profileData?.image || 'assets/user.png'; // Use profile image if available
   }
 
   onEdit() {
@@ -58,13 +49,13 @@ export class UserProfileComponent implements OnInit {
 
   openPaymentDialog(): void {
     this.dialog.open(PaymentDialogComponent, {
-      width: '400px', // adjust the width as needed
-      data: { /* pass any data if needed */ }
+      width: '400px'
     });
   }
 
-  logOut(){
-    this.dialog.closeAll()
-    this.router.navigate(['/'])
+  logOut() {
+    this.authService.logout();
+    this.dialog.closeAll();
+    this.router.navigate(['/']);
   }
 }

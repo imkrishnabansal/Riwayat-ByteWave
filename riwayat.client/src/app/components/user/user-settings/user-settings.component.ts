@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../../../auth.service'; // Import AuthService
 
 interface UserSettings {
   notifications: boolean;
@@ -12,7 +15,7 @@ interface UserSettings {
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.scss']
 })
-export class UserSettingsComponent {
+export class UserSettingsComponent implements OnInit{
   settings: UserSettings = {
     notifications: true,
     homeAddress: '159, Radha City, Mathura',
@@ -20,8 +23,15 @@ export class UserSettingsComponent {
     latestOffers: false
   };
 
+  constructor(private router: Router, public dialog: MatDialog, private authService: AuthService) {}
+  profileData: any;
   isUpdated: boolean = false;
   message: string = '';
+
+  ngOnInit(): void {
+    // Fetch logged-in user data from AuthService
+    this.profileData = this.authService.getCurrentUser();
+  }
 
   // Mark settings as updated
   markAsUpdated(): void {
