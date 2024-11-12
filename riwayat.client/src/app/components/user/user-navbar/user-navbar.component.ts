@@ -1,7 +1,7 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-
+import { AuthService } from '../../../auth.service'; // Import AuthService
 import { UserNotificationComponent } from '../user-notification/user-notification.component';
 import { UserCartComponent } from '../user-cart/user-cart.component';
 import { UserOrdersComponent } from '../user-orders/user-orders.component';
@@ -24,9 +24,17 @@ export class UserNavbarComponent implements OnDestroy {
   private settingsDialogRef: MatDialogRef<UserSettingsComponent> | null = null;
   private userProfileDialogRef: MatDialogRef<UserProfileComponent> | null = null;
 
-  constructor(private router: Router, public dialog: MatDialog) {
+  constructor(private router: Router, public dialog: MatDialog, private authService: AuthService) {
     // Listen for the '/' keypress
     window.addEventListener('keydown', this.handleKeyDown.bind(this));
+  }
+
+  profileData: any;
+  profileImage: string | ArrayBuffer | null = null;
+
+  ngOnInit(){
+    this.profileData = this.authService.getCurrentUser();
+    this.profileImage = this.profileData?.image || 'assets/user.png'; // Use profile image if available
   }
 
   ngOnDestroy(): void {

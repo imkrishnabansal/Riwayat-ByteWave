@@ -9,7 +9,7 @@
     <button 
       mat-icon-button 
       (click)="toggleSearchDialog()" 
-      matTooltip="Search (Press '/' to toggle)"
+      matTooltip="Search"
       aria-label="Search">
       <mat-icon class="custom-icon">search</mat-icon>
     </button>
@@ -48,13 +48,20 @@
       aria-label="Settings">
       <mat-icon>settings</mat-icon>
     </button>
+    <button 
+      mat-icon-button 
+      routerLink="/support" 
+      matTooltip="Support"
+      aria-label="Support">
+      <mat-icon>contact_support</mat-icon>
+    </button>
   </div>
   <button 
     mat-icon-button 
     (click)="goToUserProfile()" 
     matTooltip="Profile"
     aria-label="User Profile">
-    <img src="../../../assets/user.png" alt="" class="profile-pic" />
+    <img [src]="profileImage" alt="" class="profile-pic" />
   </button>
 </mat-toolbar>
 
@@ -63,7 +70,7 @@
     <button 
       mat-icon-button 
       (click)="toggleSearchDialog()" 
-      matTooltip="Search (Press '/' to toggle)"
+      matTooltip="Search"
       aria-label="Search">
       <mat-icon class="custom-icon">search</mat-icon>
     </button>
@@ -101,6 +108,13 @@
       matTooltip="Settings"
       aria-label="Settings">
       <mat-icon>settings</mat-icon>
+      <button 
+      mat-icon-button 
+      routerLink="/support" 
+      matTooltip="Support"
+      aria-label="Support">
+      <mat-icon>contact_support</mat-icon>
+    </button>
     </button>
   </div>
 </div>

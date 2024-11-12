@@ -4,11 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
 
 @Component({
-  selector: 'app-orderprev',
-  templateUrl: './orderprev.component.html',
-  styleUrls: ['./orderprev.component.scss']
+  selector: 'app-order-display',
+  templateUrl: './order-display.component.html',
+  styleUrls: ['./order-display.component.scss']
 })
-export class OrderprevComponent implements OnInit {
+export class OrderDisplayComponent implements OnInit {
   isPlannerOrder = false;
   isVendorOrder = false;
   orderDetails: any = {}; // Initialize as an empty object
@@ -34,7 +34,7 @@ export class OrderprevComponent implements OnInit {
       this.plannerName = params['plannerName'];
       this.tier = params['tier'];
       this.isPlannerOrder = params['isPlannerOrder'] === 'true';
-      this.fare = params['plannerFare'];
+      this.fare = params['fare'];
 
       // Set planner image based on name
       this.plannerImage = this.getPlannerImage(this.plannerName);
@@ -46,15 +46,7 @@ export class OrderprevComponent implements OnInit {
 
   openPaymentDialog(): void {
     this.dialog.open(PaymentDialogComponent, {
-      width: '400px',
-      data: {
-        orderDetails: this.orderDetails, 
-        plannerName: this.plannerName, 
-        tier: this.tier, 
-        plannerImage: this.plannerImage, 
-        isPlannerOrder: this.isPlannerOrder, 
-        fare: this.fare
-      }
+      width: '400px'
     });
   }
 

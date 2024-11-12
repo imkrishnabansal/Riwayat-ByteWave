@@ -1,5 +1,5 @@
-import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,15 @@ export class PaymentDialogComponent implements OnInit {
   constructor(
     private renderer: Renderer2,
     private router: Router,
-    private dialogRef: MatDialogRef<PaymentDialogComponent>
+    private dialogRef: MatDialogRef<PaymentDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { 
+      orderDetails: {}, 
+        plannerName: string, 
+        tier: string, 
+        plannerImage: string, 
+        isPlannerOrder: boolean, 
+        fare: string
+     }
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +41,18 @@ export class PaymentDialogComponent implements OnInit {
 
   redirectSuccess(): void {
     this.dialogRef.close();  // Close the dialog
-    this.router.navigate(['/paysuccess']);  // Navigate to success page
+    
+    // Navigate to the paysuccess page with query parameters
+    this.router.navigate(['/paysuccess'], { 
+      queryParams: { 
+        orderDetails: JSON.stringify(this.data.orderDetails), // Convert the object to a JSON string
+        plannerName: this.data.plannerName,
+        tier: this.data.tier,
+        plannerImage: this.data.plannerImage,
+        isPlannerOrder: this.data.isPlannerOrder,
+        fare: this.data.fare
+      }
+    });
   }
+  
 }

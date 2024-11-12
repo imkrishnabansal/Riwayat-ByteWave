@@ -14,6 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a42b049ab95f6097e4af2cf81610706ac17367")]
+
 [assembly: System.Reflection.AssemblyProductAttribute("Riwayat.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Riwayat.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

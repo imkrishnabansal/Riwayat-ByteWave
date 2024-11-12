@@ -5,7 +5,10 @@
         "password": "imprakhar",
         "username": "imprakhartripathi",
         "email": "imprakhartripathiofficial@gmail.com",
-        "image": "assets/team/prakhar.png"
+        "image": "assets/team/prakhar.png",
+        "addressHome": "159, Ground Floor, Radha City, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "8707406448"
         
     },
     {
@@ -14,25 +17,34 @@
         "password": "123",
         "username": "imkrishnabansal",
         "email": "lalibansa454@gmail.com",
-        "image": "assets/team/krishna.png"
+        "image": "assets/team/krishna.png",
+        "addressHome": "Krishna Valley, GLA University, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "8815920292"
         
     },
     {
-        "name": "Akash Agrawal",
+        "name": "Akash Agarwal",
         "role": "Developer",
-        "password": "123",
+        "password": "honeyagarwal",
         "username": "itsakashagrawal",
-        "email": "akash@gmail.com",
-        "image": "assets/team/akash.png"
+        "email": "honeyagarwal043@gmail.com",
+        "image": "assets/team/akash.png",
+        "addressHome": "Radha Puram Estate, NH19, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "7017762120"
         
     },
     {
         "name": "Aditya Vashishth",
         "role": "Developer",
-        "password": "123",
+        "password": "adityapandit",
         "username": "ThAditya",
-        "email": "aditya@gmail.com",
-        "image": "assets/team/aditya.png"
+        "email": "aditya.vashishth95@gmail.com",
+        "image": "assets/team/aditya.png",
+        "addressHome": "Maholi Road, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "9149005094"
         
     }
 ]
