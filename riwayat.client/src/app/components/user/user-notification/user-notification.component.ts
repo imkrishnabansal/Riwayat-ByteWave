@@ -1,16 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../../../auth.service'; // Import AuthService
 
 @Component({
   selector: 'app-user-notification',
   templateUrl: './user-notification.component.html',
-  styleUrl: './user-notification.component.scss'
+  styleUrls: ['./user-notification.component.scss']
 })
-export class UserNotificationComponent {
+export class UserNotificationComponent implements OnInit {
 
-  notifications: { title: string, content: string }[] = [
-      { title: "New Offer on Wedding Package", content: "Get 30% Discount on Our Silver Wedding Package" },
-      { title: "Booking Confirmation", content: "Musician: 'SXMPRA', has Been Booked for 30th February, 2024" },
-      { title: "Message from the Vendor", content: "Hi There! Can you please tell me when are you free for a call, Thanks." }
-  ];
+  profileData: any;
+  notifications: any[] = []; // Define a property to hold notifications
 
+  constructor(private router: Router, public dialog: MatDialog, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    // Get current user data from AuthService
+    this.profileData = this.authService.getCurrentUser();
+
+    // Check if profileData exists and has notifications, then assign to notifications property
+    if (this.profileData && this.profileData.notifications) {
+      this.notifications = this.profileData.notifications;
+    }
+  }
 }
