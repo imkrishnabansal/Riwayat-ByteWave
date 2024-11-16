@@ -1,5 +1,5 @@
 <app-user-navbar></app-user-navbar>
-
+<button mat-button class="other-btn" (click)="dumpOrderData()">Dump</button>
 <div class="body-container">
   <div class="order-prev-container" *ngIf="isPlannerOrder">
     <h1>Order Preview</h1>
@@ -68,8 +68,11 @@
         </mat-card>
   
         <mat-card class="price-summary">
-          <h2>Total Cost</h2>
+          <div class="price-dets">
+            <h2>Total Cost</h2>
           <p>{{ fare }}</p>
+          </div>
+          <!-- <button mat-icon-button class="other-btn" (click)="downloadBill()"><mat-icon>download</mat-icon></button> -->
         </mat-card>
   
         <button mat-button class="cmf-btn" (click)="openPaymentDialog()">Confirm Booking</button>
