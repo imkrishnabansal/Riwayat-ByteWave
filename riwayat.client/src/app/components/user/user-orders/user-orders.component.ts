@@ -86,7 +86,28 @@ export class UserOrdersComponent implements OnInit {
   }
 
   cancelOrder(orderId: string): void {
-    // Add your cancellation logic here
-    console.log(`Order with ID ${orderId} cancelled.`);
+    // Define a function to remove an order from an array
+    const removeFromArray = (array: any[]) => {
+      const index = array.findIndex(order => order.orderId === orderId);
+      if (index !== -1) {
+        array.splice(index, 1);
+      }
+    };
+  
+    // Remove from plannerOrders and its categorized arrays
+    removeFromArray(this.plannerOrders);
+    removeFromArray(this.todayPlannerOrders);
+    removeFromArray(this.upcomingPlannerOrders);
+    removeFromArray(this.previousPlannerOrders);
+  
+    // Remove from vendorOrders and its categorized arrays
+    removeFromArray(this.vendorOrders);
+    removeFromArray(this.todayVendorOrders);
+    removeFromArray(this.upcomingVendorOrders);
+    removeFromArray(this.previousVendorOrders);
+  
+    console.log(`Order with ID ${orderId} has been cancelled and removed from all arrays.`);
   }
+  
+  
 }

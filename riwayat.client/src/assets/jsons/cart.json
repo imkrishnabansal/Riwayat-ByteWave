@@ -5,25 +5,25 @@
         "isPlannerOrder": true,
         "isVendorOrder": false,
         "orderDetails": {
-          "eventType": "Graduation Party",
+          "eventType": "Wedding Ceremony",
           "eventDate": "2026-05-24T18:30:00.000Z",
-          "eventTime": "2 PM",
-          "eventDescription": "I just Graduated College and I want to throw a party for my friends",
+          "eventTime": "6 PM",
+          "eventDescription": "I would like you to plan a wedding for my brother, he likes classy weddings no over the top stuff",
           "addons": {
             "freeSnacks": false,
-            "waiterDiscount": false,
+            "waiterDiscount": true,
             "artistDiscount": false
           },
           "customServices": {
-            "customVenue": false,
-            "customCatering": false,
+            "customVenue": true,
+            "customCatering": true,
             "customEntertainment": false,
-            "customDecorations": false,
-            "customWaiters": false
+            "customDecorations": true,
+            "customWaiters": true
           }
         },
         "plannerName": "Dr. House",
-        "tier": "Standard",
+        "tier": "Premium",
         "fare": "₹10,000",
         "plannerImage": "assets/dr-house2.jpg"
       },
@@ -247,46 +247,6 @@
       "vendorFare": 10000
     },
     "plannerImage": "assets/user.png"
-  },
-  {
-    "orderId": "090",
-    "orderBy": "imprakhartripathi",
-    "isPlannerOrder": false,
-    "isVendorOrder": true,
-    "orderDetails": {
-      "vendorName": "Grand Events",
-      "vendorImage": "assets/vendor.jpg",
-      "servingDetails": {
-        "serviceLocationType": "Office Address",
-        "customAddress": "",
-        "serviceDate": "2024-11-15T18:30:00.000Z",
-        "serviceTime": "7PM",
-        "serviceInstructions": ""
-      },
-      "coordinatorDetails": {
-        "coordinatorName": "Prakhar",
-        "coordinatorPhone": "8707406448",
-        "coordinatorAltPhone": ""
-      },
-      "services": [
-        {
-          "name": "Entrance Arch",
-          "description": "Grand entrance arch decor.",
-          "fare": 7000,
-          "image": "assets/vendor.services.png",
-          "selected": true
-        },
-        {
-          "name": "Photobooth Setup",
-          "description": "Decorated photobooth for guest photos.",
-          "fare": 6000,
-          "image": "assets/vendor.services.png",
-          "selected": true
-        }
-      ],
-      "isVendorOrder": true,
-      "vendorFare": 10000
-    },
-    "plannerImage": "assets/user.png"
   }
+  
 ]

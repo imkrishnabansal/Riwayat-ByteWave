@@ -1,8 +1,9 @@
 <app-user-navbar></app-user-navbar>
-<button mat-button class="other-btn" (click)="dumpOrderData()">Dump</button>
 <div class="body-container">
   <div class="order-prev-container" *ngIf="isPlannerOrder">
     <h1>Order Preview</h1>
+    <button mat-icon-button matTooltip="Blob JSON" (click)="dumpOrderData()"><mat-icon>eject</mat-icon></button>
+    <button mat-icon-button matTooltip="Download Invoice TXT" (click)="downloadBill()"><mat-icon>get_app</mat-icon></button>
   
     <div class="flex-container">
       

@@ -78,7 +78,7 @@ export class UserNavbarComponent implements OnDestroy {
     if (!this.cartDialogRef) {
       this.cartDialogRef = this.dialog.open(UserCartComponent, {
         width: '1000px',
-        height: 'auto',
+        height: '500px',
         panelClass: 'custom-dialog-container',
       });
       this.cartDialogRef.afterClosed().subscribe(() => this.cartDialogRef = null);
@@ -89,7 +89,7 @@ export class UserNavbarComponent implements OnDestroy {
     if (!this.ordersDialogRef) {
       this.ordersDialogRef = this.dialog.open(UserOrdersComponent, {
         width: '1000px',
-        height: 'auto',
+        height: '500px',
         panelClass: 'custom-dialog-container',
       });
       this.ordersDialogRef.afterClosed().subscribe(() => this.ordersDialogRef = null);
