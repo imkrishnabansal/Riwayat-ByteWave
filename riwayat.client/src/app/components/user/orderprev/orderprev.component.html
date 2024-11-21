@@ -64,7 +64,7 @@
           <!-- <p><strong>Vendor Order:</strong> {{ isPlannerOrder ? 'Yes' : 'No' }}</p> -->
           </div>
           <div class="planner-image-container">
-            <img [src]="plannerImage" alt="image" class="planner-image" />
+            <img [src]="plannerImage" alt="image" class="planner-image" (click)="goToPlannerProfile()" />
           </div>
         </mat-card>
   
@@ -77,7 +77,7 @@
         </mat-card>
   
         <button mat-button class="cmf-btn" (click)="openPaymentDialog()">Confirm Booking</button>
-        <button mat-button class="other-btn" (click)="goToPlannerProfile()">Go Back</button>
+        <button mat-button class="other-btn" (click)="goBack()">Go Back</button>
         <button mat-button class="other-btn" (click)="goToSupport()">Contact Support</button>
       </div>
     </div>
@@ -167,7 +167,7 @@
           <!-- <p><strong>Vendor Order:</strong> {{ isPlannerOrder ? 'Yes' : 'No' }}</p> -->
           </div>
           <div class="planner-image-container">
-            <img [src]="orderDetails.vendorImage" alt="image" class="planner-image" />
+            <img [src]="orderDetails.vendorImage" alt="image" class="planner-image" (click)="goToVendorProfile()" />
           </div>
         </mat-card>
   
@@ -177,7 +177,7 @@
         </mat-card>
   
         <button mat-button class="cmf-btn" (click)="openPaymentDialog()">Confirm Booking</button>
-        <button mat-button class="other-btn" (click)="goToVendorProfile()">Go Back</button>
+        <button mat-button class="other-btn" (click)="goBack()">Go Back</button>
         <button mat-button class="other-btn" (click)="goToSupport()">Contact Support</button>
       </div>
   </div>

@@ -16,14 +16,14 @@
         <!-- Delivery Addresses -->
         <div class="setting-item">
           <mat-label>Home Address:</mat-label>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <input matInput [(ngModel)]="profileData.addressHome" (input)="markAsUpdated()" />
           </mat-form-field>
         </div>
   
         <div class="setting-item">
           <mat-label>Office Address:</mat-label>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <input matInput [(ngModel)]="profileData.addressOffice" (input)="markAsUpdated()" />
           </mat-form-field>
         </div>

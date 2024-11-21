@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-orderprev',
@@ -21,7 +22,8 @@ export class OrderprevComponent implements OnInit {
     private route: ActivatedRoute,
     public dialog: MatDialog,
     private cdr: ChangeDetectorRef, // Inject ChangeDetectorRef
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -81,6 +83,10 @@ export class OrderprevComponent implements OnInit {
     }
   }
 
+  goBack(){
+    this.location.back();
+  }
+
   goToSupport(){
     this.router.navigate(['/support']);
   }
@@ -129,19 +135,19 @@ export class OrderprevComponent implements OnInit {
         Event Type: ${this.orderDetails.eventType || 'N/A'}
         Event Date: ${this.orderDetails.eventDate || 'N/A'}
         Event Time: ${this.orderDetails.eventTime || 'N/A'}
-        Event Description: ${this.orderDetails.eventDescription || 'N/A'}
+        Event Description: ${this.orderDetails.eventDescription || 'Not Provided'}
   
         Addons:
-        Free Snacks = ${this.orderDetails.addons?.freeSnacks || 'No'}
-        Waiter Discount = ${this.orderDetails.addons?.waiterDiscount || 'No'}
-        Standup Artist Discount = ${this.orderDetails.addons?.artistDiscount || 'No'}
+        Free Snacks = ${this.orderDetails.addons?.freeSnacks}
+        Waiter Discount = ${this.orderDetails.addons?.waiterDiscount}
+        Standup Artist Discount = ${this.orderDetails.addons?.artistDiscount}
   
         Custom Services:
-        Venue = ${this.orderDetails.customServices?.customVenue || 'No'}
-        Catering = ${this.orderDetails.customServices?.customCatering || 'No'}
-        Decorations = ${this.orderDetails.customServices?.customDecorations || 'No'}
-        Entertainment = ${this.orderDetails.customServices?.customEntertainment || 'No'}
-        Waiters = ${this.orderDetails.customServices?.customWaiters || 'No'}
+        Venue = ${this.orderDetails.customServices?.customVenue}
+        Catering = ${this.orderDetails.customServices?.customCatering}
+        Decorations = ${this.orderDetails.customServices?.customDecorations}
+        Entertainment = ${this.orderDetails.customServices?.customEntertainment}
+        Waiters = ${this.orderDetails.customServices?.customWaiters}
   
         --------------------------------
       `;
