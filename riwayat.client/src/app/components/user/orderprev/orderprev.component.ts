@@ -114,20 +114,77 @@ export class OrderprevComponent implements OnInit {
   }
 
   downloadBill(): void {
-    // Format the bill details into a text format
-    const billContent = `
-      Order Invoice
-      -------------
-      Order Type: ${this.isPlannerOrder ? 'Planner Order' : 'Vendor Order'}
-      Name: ${this.plannerName || this.orderDetails.vendorName || 'N/A'}
-      Tier: ${this.tier || 'N/A'}
-      Fare: ${this.fare || 'N/A'}
+    let billContent = 'Order Invoice\n-------------\n';
   
-      Order Details:
-      ${JSON.stringify(this.orderDetails, null, 2)}
+    if (this.isPlannerOrder) {
+      // Generate bill for planner
+      billContent += `
+        Planner Order
+        -------------
+        Name: ${this.plannerName}
+        Tier: ${this.tier}
+        Fare: ${this.fare || 'N/A'}
+    
+        Order Details:
+        Event Type: ${this.orderDetails.eventType || 'N/A'}
+        Event Date: ${this.orderDetails.eventDate || 'N/A'}
+        Event Time: ${this.orderDetails.eventTime || 'N/A'}
+        Event Description: ${this.orderDetails.eventDescription || 'N/A'}
   
-      Thank you for using our services!
-    `;
+        Addons:
+        Free Snacks = ${this.orderDetails.addons?.freeSnacks || 'No'}
+        Waiter Discount = ${this.orderDetails.addons?.waiterDiscount || 'No'}
+        Standup Artist Discount = ${this.orderDetails.addons?.artistDiscount || 'No'}
+  
+        Custom Services:
+        Venue = ${this.orderDetails.customServices?.customVenue || 'No'}
+        Catering = ${this.orderDetails.customServices?.customCatering || 'No'}
+        Decorations = ${this.orderDetails.customServices?.customDecorations || 'No'}
+        Entertainment = ${this.orderDetails.customServices?.customEntertainment || 'No'}
+        Waiters = ${this.orderDetails.customServices?.customWaiters || 'No'}
+  
+        --------------------------------
+      `;
+    } else if (this.isVendorOrder) {
+      // Generate bill for vendor
+      billContent += `
+        Vendor Order
+        -------------
+        Name: ${this.orderDetails.vendorName || 'N/A'}
+        Fare: ${this.orderDetails.vendorFare || 'N/A'}
+    
+        Services Availed:
+      `;
+      if (this.orderDetails.services?.length) {
+        this.orderDetails.services.forEach((service: any) => {
+          billContent += `- ${service.name || 'Unnamed Service'}: ${service.description || 'No description provided'}\n      `;
+        });
+      } else {
+        billContent += 'No services availed.\n';
+      }
+  
+      billContent += `
+        Coordinator Details:
+        Name: ${this.orderDetails.coordinatorDetails?.coordinatorName || 'N/A'}
+        Phone: ${this.orderDetails.coordinatorDetails?.coordinatorPhone || 'N/A'}
+        Alternative Phone: ${this.orderDetails.coordinatorDetails?.coordinatorAltPhone || 'Not Provided'}
+  
+        Serving Details:
+        Location Type: ${this.orderDetails.servingDetails?.serviceLocationType || 'N/A'}
+        Custom Address: ${this.orderDetails.servingDetails?.customAddress || 'Not Needed'}
+        Date: ${this.orderDetails.servingDetails?.serviceDate || 'N/A'}
+        Time: ${this.orderDetails.servingDetails?.serviceTime || 'N/A'}
+  
+        Instructions:
+        ${this.orderDetails.servingDetails?.serviceInstructions || 'No Instructions'}
+  
+        --------------------------------
+      `;
+    } else {
+      billContent += 'No valid order details provided.\n';
+    }
+  
+    billContent += '\nThank you for using our services!';
   
     // Create a Blob from the bill content and trigger the download
     const blob = new Blob([billContent], { type: 'text/plain' });
@@ -140,6 +197,7 @@ export class OrderprevComponent implements OnInit {
     // Clean up the object URL
     window.URL.revokeObjectURL(url);
   }
+  
   
   
 }

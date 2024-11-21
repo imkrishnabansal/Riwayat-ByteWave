@@ -85,6 +85,8 @@
   
   
   <div class="order-prev-container" *ngIf="isVendorOrder">
+    <button mat-icon-button matTooltip="Blob JSON" (click)="dumpOrderData()"><mat-icon>eject</mat-icon></button>
+    <button mat-icon-button matTooltip="Download Invoice TXT" (click)="downloadBill()"><mat-icon>get_app</mat-icon></button>
     <h1>Order Preview</h1>
   
     <div class="flex-container">

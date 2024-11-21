@@ -87,6 +87,6 @@ export class AuthenticatorComponent {
     this.authService.login(guestUser);  // Store guest user
     alert("Welcome, Guest User");
     this.router.navigate(['/user']);
-    
+    this.dialogRef.close();
   }
 }
