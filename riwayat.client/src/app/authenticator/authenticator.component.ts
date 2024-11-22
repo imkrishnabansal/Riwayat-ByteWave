@@ -12,6 +12,7 @@ import { AuthService } from '../auth.service'; // Import AuthService
 })
 export class AuthenticatorComponent {
   isLogin: boolean = true;
+  hide = true;
   authForm: FormGroup;
   // newAuthForm: FormGroup;
   teamMembers: any[] = [];
