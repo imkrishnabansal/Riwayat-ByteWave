@@ -1,4 +1,4 @@
-.orders-container {
+.body-container {
     padding: 20px;
     width: 90%;
     margin: auto;
@@ -8,42 +8,60 @@
       margin-bottom: 20px;
     }
   
-    .orders-section {
-      margin-bottom: 30px;
-  
-      h3 {
-        margin-bottom: 15px;
-      }
-  
-      .order-item {
-        display: flex;
-        justify-content: space-between;
-        border: 1px solid #ccc;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-  
-        .item-details p {
-          margin: 0;
-        }
-  
-        .item-actions {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-  
-          button {
-            margin-bottom: 5px;
-          }
-        }
-      }
-    }
-  
     .no-orders {
       text-align: center;
       font-size: 1.2rem;
       color: #888;
       margin-top: 20px;
     }
+
+    .result-card-content {
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    mat-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
+  .vendor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .planner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .img-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  .btn-div {
+    margin-left: 350px;
+    .redirect-btn {
+      color: black;
+    }
+    .cancel-btn {
+      color: red;
+      mat-icon-button:disabled{
+      color: #888;
+      }
+    }
+  }
+    
   

@@ -11,6 +11,7 @@ interface Vendor {
   rating: number;
   peopleServed: number;
   image: string;
+  
 }
 
 interface Planner {

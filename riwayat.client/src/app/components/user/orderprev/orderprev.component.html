@@ -1,8 +1,9 @@
 <app-user-navbar></app-user-navbar>
-
 <div class="body-container">
   <div class="order-prev-container" *ngIf="isPlannerOrder">
     <h1>Order Preview</h1>
+    <button mat-icon-button matTooltip="Blob JSON" (click)="dumpOrderData()"><mat-icon>eject</mat-icon></button>
+    <button mat-icon-button matTooltip="Download Invoice TXT" (click)="downloadBill()"><mat-icon>get_app</mat-icon></button>
   
     <div class="flex-container">
       
@@ -63,17 +64,20 @@
           <!-- <p><strong>Vendor Order:</strong> {{ isPlannerOrder ? 'Yes' : 'No' }}</p> -->
           </div>
           <div class="planner-image-container">
-            <img [src]="plannerImage" alt="image" class="planner-image" />
+            <img [src]="plannerImage" alt="image" class="planner-image" (click)="goToPlannerProfile()" />
           </div>
         </mat-card>
   
         <mat-card class="price-summary">
-          <h2>Total Cost</h2>
+          <div class="price-dets">
+            <h2>Total Cost</h2>
           <p>{{ fare }}</p>
+          </div>
+          <!-- <button mat-icon-button class="other-btn" (click)="downloadBill()"><mat-icon>download</mat-icon></button> -->
         </mat-card>
   
         <button mat-button class="cmf-btn" (click)="openPaymentDialog()">Confirm Booking</button>
-        <button mat-button class="other-btn" (click)="goToPlannerProfile()">Go Back</button>
+        <button mat-button class="other-btn" (click)="goBack()">Go Back</button>
         <button mat-button class="other-btn" (click)="goToSupport()">Contact Support</button>
       </div>
     </div>
@@ -81,6 +85,8 @@
   
   
   <div class="order-prev-container" *ngIf="isVendorOrder">
+    <button mat-icon-button matTooltip="Blob JSON" (click)="dumpOrderData()"><mat-icon>eject</mat-icon></button>
+    <button mat-icon-button matTooltip="Download Invoice TXT" (click)="downloadBill()"><mat-icon>get_app</mat-icon></button>
     <h1>Order Preview</h1>
   
     <div class="flex-container">
@@ -161,7 +167,7 @@
           <!-- <p><strong>Vendor Order:</strong> {{ isPlannerOrder ? 'Yes' : 'No' }}</p> -->
           </div>
           <div class="planner-image-container">
-            <img [src]="orderDetails.vendorImage" alt="image" class="planner-image" />
+            <img [src]="orderDetails.vendorImage" alt="image" class="planner-image" (click)="goToVendorProfile()" />
           </div>
         </mat-card>
   
@@ -171,7 +177,7 @@
         </mat-card>
   
         <button mat-button class="cmf-btn" (click)="openPaymentDialog()">Confirm Booking</button>
-        <button mat-button class="other-btn" (click)="goToVendorProfile()">Go Back</button>
+        <button mat-button class="other-btn" (click)="goBack()">Go Back</button>
         <button mat-button class="other-btn" (click)="goToSupport()">Contact Support</button>
       </div>
   </div>
