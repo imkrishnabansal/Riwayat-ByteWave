@@ -14,7 +14,7 @@ builder.Services.AddScoped<DBService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular",
-        policy => policy.WithOrigins("http://localhost:4200") // Angular app URL
+        policy => policy.WithOrigins("http://localhost:6900") // Angular app URL
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials()); // If credentials like cookies or tokens are needed

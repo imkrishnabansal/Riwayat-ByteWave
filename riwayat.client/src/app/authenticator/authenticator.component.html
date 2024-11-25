@@ -24,10 +24,17 @@
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password" formControlName="password" required />
-            <button mat-icon-button matSuffix (click)="hide = !hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <button 
+              mat-icon-button 
+              matSuffix 
+              type="button" 
+              (click)="hide = !hide" 
+              [matTooltip]="hide ? 'Show Password' : 'Hide Password'">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
           </mat-form-field>
+          
+          
         </ng-container>
 
         <!-- Sign Up Fields -->
