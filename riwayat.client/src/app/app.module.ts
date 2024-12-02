@@ -69,6 +69,7 @@ import { PaymentInProgressComponent } from './components/user/payment-in-progres
 import { SupportComponent } from './components/support/support.component';
 import { OrderDisplayComponent } from './components/user/order-display/order-display.component';
 import { DateFormatterPipe } from './date-formatter.pipe';
+import { PaymentFailureComponent } from './components/user/payment-failure/payment-failure.component';
 
 
 
@@ -102,6 +103,7 @@ import { DateFormatterPipe } from './date-formatter.pipe';
     PaymentInProgressComponent,
     SupportComponent,
     OrderDisplayComponent,
+    PaymentFailureComponent,
     DateFormatterPipe
   ],
   imports: [

@@ -18,6 +18,7 @@ import { PaymentSuccessComponent } from './components/user/payment-success/payme
 import { PaymentInProgressComponent } from './components/user/payment-in-progress/payment-in-progress.component';
 import { SupportComponent } from './components/support/support.component';
 import { OrderDisplayComponent } from './components/user/order-display/order-display.component';
+import { PaymentFailureComponent } from './components/user/payment-failure/payment-failure.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticatorComponent, data: { title: 'Riwayat - Authenticator' } },
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'paysuccess', component: PaymentSuccessComponent, data: { title: 'Riwayat - Payment Successful' } },
   { path: 'payinprogress', component: PaymentInProgressComponent, data: { title: 'Riwayat - Payment in Progress' } },
   { path: 'support', component: SupportComponent, data: { title: 'Riwayat - Support & Team' } },
-  { path: 'displayorder', component: OrderDisplayComponent, data: { title: 'Riwayat - Your Order' } }
+  { path: 'displayorder', component: OrderDisplayComponent, data: { title: 'Riwayat - Your Order' } },
+  { path: 'payfail', component: PaymentFailureComponent, data: { title: 'Riwayat - Payment Failed' } }
 ];
 
 @NgModule({
