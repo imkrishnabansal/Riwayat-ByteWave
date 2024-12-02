@@ -48,14 +48,22 @@
       aria-label="Settings">
       <mat-icon>settings</mat-icon>
     </button>
-    <button 
+    <!-- <button 
       mat-icon-button 
       routerLink="/support" 
       matTooltip="Support"
       aria-label="Support">
       <mat-icon>contact_support</mat-icon>
-    </button>
+    </button> -->
   </div>
+  <button 
+      mat-icon-button 
+      class="support-btn"
+      routerLink="/support" 
+      matTooltip="Support"
+      aria-label="Support">
+      <mat-icon>contact_support</mat-icon>
+    </button>
   <button 
     mat-icon-button 
     (click)="goToUserProfile()" 
@@ -108,13 +116,6 @@
       matTooltip="Settings"
       aria-label="Settings">
       <mat-icon>settings</mat-icon>
-      <button 
-      mat-icon-button 
-      routerLink="/support" 
-      matTooltip="Support"
-      aria-label="Support">
-      <mat-icon>contact_support</mat-icon>
-    </button>
     </button>
   </div>
 </div>

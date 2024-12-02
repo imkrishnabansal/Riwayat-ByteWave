@@ -12,8 +12,9 @@ import { AuthService } from '../auth.service'; // Import AuthService
 })
 export class AuthenticatorComponent {
   isLogin: boolean = true;
+  hide = true;
   authForm: FormGroup;
-  newAuthForm: FormGroup;
+  // newAuthForm: FormGroup;
   teamMembers: any[] = [];
 
   constructor(
@@ -28,11 +29,11 @@ export class AuthenticatorComponent {
       password: ['', Validators.required]
     });
 
-    this.newAuthForm = this.fb.group({
-      name: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      newPassword: ['', Validators.required]
-    });
+    // this.newAuthForm = this.fb.group({
+    //   name: ['', Validators.required],
+    //   phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+    //   newPassword: ['', Validators.required]
+    // });
   }
 
   ngOnInit(): void {
@@ -56,22 +57,13 @@ export class AuthenticatorComponent {
           this.authService.login(member);  // Store user in AuthService
           this.router.navigate(['/user']);
         } else if (username === 'user' && password === 'user') {
-          const guestUser = { name: "Guest User", username: "user" };
+          const guestUser = { name: "Guest User", username: "guestuser", email: 'Not Available', phone: 'Not Available' };
           this.authService.login(guestUser);  // Store guest user
-          alert("Welcome, User");
+          alert("Welcome, Guest User");
           this.router.navigate(['/user']);
         } else {
           alert('Invalid credentials');
         }
-      } else {
-        alert('Please fill out all fields correctly');
-      }
-    } else {
-      // Handle sign-up logic here
-      if (this.newAuthForm.valid) {
-        alert('Account created successfully');
-        console.log(this.newAuthForm.value);
-        this.router.navigate(['/user']);
       } else {
         alert('Please fill out all fields correctly');
       }
@@ -89,5 +81,13 @@ export class AuthenticatorComponent {
 
   goToShowcase() {
     this.router.navigate(['/showcase']);
+  }
+
+  continueAsGuest(){
+    const guestUser = { name: "Guest User", username: "guestuser", email: 'Not Available', phone: 'Not Available' };
+    this.authService.login(guestUser);  // Store guest user
+    alert("Welcome, Guest User");
+    this.router.navigate(['/user']);
+    this.dialogRef.close();
   }
 }
